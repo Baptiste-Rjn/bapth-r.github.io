@@ -28,7 +28,7 @@ Dans ce rapport, nous examinerons le groupe LAPSUS$ afin d'essayer de comprendre
 # Création du groupe
 
 LAPSUS$ est un groupe de cybercriminels assez récent spécialisé dans le **vol de données d'entreprise**. Il a été créé il y a environ 3 ans par un individu nommé **Arion Kurtaj**, également connu sous les pseudonymes de **Whitedoxbin**, **Breachbase**, **Oklaqq**, et **White**. Pour des raisons de simplicité, nous l'appellerons dans la suite de ce document uniquement par l'un de ses pseudonymes : **White**.  
-Nous allons voir dans la suite de cette partie les principaux protagonistes du groupe.
+Nous allons voir dans la suite de cette partie le principal protagoniste du groupe.
 
 ## Arion Kurtaj alias White
 
@@ -46,18 +46,18 @@ Explorons maintenant la définition de ces deux termes :
 Sur ce site, il utilise un nouveau pseudo : **Everlynn**.
 
 
-Pour continuer ses activités criminelles, **White** est également un membre actif sur le site `doxbin[.]com` où il en devient le propriétaire pour **75 000$** en BTC, mais se retrouve contraint de revendre le site peu de temps vers janvier 2022 pour **20 000$**, car il n'est pas apprécié au sein de la communauté. Juste avant de le rendre, il divulgue l'intégralité du site pour se venger sur Telegram.
+Pour continuer ses activités criminelles, **White** est également un membre actif sur le site `doxbin[.]com` dont il devient le propriétaire pour **75 000$** en BTC, mais se retrouve contraint de revendre le site peu de temps après vers janvier 2022 pour **20 000$**, car il n'est pas apprécié au sein de la communauté. Juste avant de le rendre, il divulgue l'intégralité du site pour se venger sur Telegram.
 
 ![Doxbin leak download](images/lapsus/doxbin_download.png)
 
-Une analyse des articles sur https://flashpoint.io/blog/doxbin-leak/ et https://cyble.com/blog/sensitive-information-exposed-through-doxbin-data-leak/ ont révélé que la fuite de données contient les informations de **41 544 utilisateurs uniques** dans lesquelles sont présentes :   
+Une analyse des articles sur https://flashpoint.io/blog/doxbin-leak/ et https://cyble.com/blog/sensitive-information-exposed-through-doxbin-data-leak/ a révélé que la fuite de données contient les informations de **41 544 utilisateurs uniques** dans lesquelles sont présentes :   
 - les noms d'utilisateur
 - les adresses e-mail 
 - les mots de passe
 
-Il faut aussi noter que la fuite de données, nous pouvons notamment trouver le mot de passe de White que nous ne divulguerons pas.   
+Il faut aussi noter que dans la fuite de données, nous pouvons notamment trouver le mot de passe de White que nous ne divulguerons pas.   
 ![Doxbin leak White password ](images/lapsus/doxbin_password.png)  
-Afin de se venger, les membres du forum l'ont par la suite doxxé, c'est-à-dire révélé ses informations personnelles. Voici une capture d'écran montrant certaines données personnelles de White, bien entendu masquées.  
+Afin de se venger, les membres du forum l'ont par la suite doxxé, c'est-à-dire qu'ils ont révélé ses informations personnelles. Voici une capture d'écran montrant certaines données personnelles de White, bien entendu masquées.  
 ![Doxbin leak White](images/lapsus/doxbin_white_leak.png)  
 Dans ce leak, nous pouvons retrouver des photos de lui enfant, ainsi que des adresses e-mail, des mots de passe, des informations sur sa famille, et bien d'autres détails personnels.  Par ailleurs, voici une image de lui enfant que nous pouvons retrouver dans ces données :  
 ![Doxbin leak img White](images/lapsus/doxbin_white2.png)  
@@ -67,12 +67,12 @@ Même en étant découvert et possédant toutes ces informations personnelles su
 # Activités du groupe LAPSUS$
 ## Découverte du groupe 
 
-**LAPSUS$** est un groupe de cybercriminel composé de personnes jeunes dont des mineures (-18 ans). Ils se sont fait connaitre en **décembre 2021** et sont à l'origine de nombreuses fuites de données d'entreprises de renommé mondiales comme **NVIDIA**, **Microsoft** et même **Ubisoft**. Nous allons voir dans le suite de ce document les méthodes utilisées par ce groupe puis les différentes attaques qu'ils ont ménés.
+**LAPSUS$** est un groupe de cybercriminel composé de personnes jeunes dont des mineurs (-18 ans). Ils se sont fait connaitre en **décembre 2021** et sont à l'origine de nombreuses fuites de données d'entreprises de renommé mondiales comme **NVIDIA**, **Microsoft** et même **Ubisoft**. Nous allons voir dans le suite de ce document les méthodes utilisées par ce groupe, puis les différentes attaques qu'ils ont ménées.
 
 
-## Méthodes utilisés par ce groupe
+## Méthodes utilisées par ce groupe
 
-**LAPSUS$** utilise une large diversité de tactiques, techniques et procédures, cependant, ils préfèrent utiliser des failles huamines afin de réussir à arriver à leur objectif ce qui ne nécessite pas de techniques avancés en sécurité informatique. Nous pouvons en effet, retrouver un message sur leur Telegram essayant de recruter des personnes travaillant dans une des sociétés qu'ils avaient pour cible afin qu'ils leurs fournissent un accès initial : 
+**LAPSUS$** utilise une large diversité de tactiques, techniques et procédures, cependant, ils préfèrent utiliser des failles humaines afin de réussir à arriver à leur objectif ce qui ne nécessite pas de techniques avancées en sécurité informatique. Nous pouvons en effet, retrouver un message sur leur Telegram essayant de recruter des personnes travaillant dans une des sociétés qu'ils avaient pour cible afin qu'ils leurs fournissent un accès initial : 
 ![Telegram hire](images/lapsus/telegram_hire.png)  
 
 
@@ -81,15 +81,15 @@ Comme nous venons de le voir, le principal canal de communication est Telegram e
 - **t[.]me/s…t** (Supprimé) — Salon permettant de discuter avec la communauté et faire des sondages permettant de décider quel sera le prochain leak.
 - **sa...up@ct...ar.com**
 
-Après avoir découvert leurs moyens de communications, nous allons nous intéresser aux différentes attaques qu'ils ont effectués.
+Après avoir découvert leurs moyens de communication, nous allons nous intéresser aux différentes attaques qu'ils ont menées.
 
 ## Attaques menées
-Nous allons maintenant nous intéresser aux différentes attaques perpétrées par ce groupe dans un ordre chronologique. Nous allons nous appercevoir que en seulement 2 mois, de nombreuses entreprises ont subit des attaques et ont perdus des données préciseuses. 
+Nous allons maintenant nous intéresser aux différentes attaques perpétrées par ce groupe dans un ordre chronologique. Nous allons nous appercevoir qu'en seulement 2 mois, de nombreuses entreprises ont subi des attaques et ont perdu des données précieuses. 
 
 ### Ministère de la santé du Brésil
 >⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données du ministère
 
-Leur première attaque connue a été faite et revendiquée le **10 décembre 2021**, prenant pour cible le ministère de la santé du Brésil. Bien que peu relayée médiatiquement, cette attaque a permis au groupe d'attaquants de dérober environ **50 To de données**. Pour conclure sur cette attaque, le site du ministère a également été effacé, exposant ainsi ce message suivant:  
+Leur première attaque connue a été faite et revendiquée le **10 décembre 2021**, prenant pour cible le ministère de la santé du Brésil. Bien que peu relayée médiatiquement, cette attaque a permis au groupe d'attaquants de dérober environ **50 To de données**. Pour conclure sur cette attaque, le site du ministère a également été effacé, exposant ainsi le message suivant:  
 ![MOH](images/lapsus/message_MOH_web.png)  
 Une communication a été faite par la suite sur leur Telegram annoncant cette compromission. Cela a été leur première communication : 
 ![MOH Telegram](images/lapsus/telegram_moh.png)  
@@ -101,9 +101,9 @@ Quatorze jours plus tard, le groupe revendique deux autres attaques, affirmant a
 ![Claro Telegram](images/lapsus/telegram_claro.png)  
 
 ### Impresa
->ℹ️ Nous n'avons pas réussit à avoir un lien nous permettant de télécharger les données
+>ℹ️ Nous n'avons pas réussi à avoir un lien nous permettant de télécharger les données
 
-Dans la suite de ces attaques, le 1er janvier 2022, l'entreprise **Impresa** subit une attaque du groupe **LAPSUS$**, où le groupe prend le contrôle des actualités, envoie des e-mails de phishing à tous les abonnés d’Impresa, et rédige un tweet sous le nom d’Expresso (un média dont Impresa est propriétaire) revendiquant le groupe LAPSUS$ comme le nouveau président du Portugal :     
+Dans la suite de ces attaques, le 1er janvier 2022, l'entreprise **Impresa** a subi une attaque du groupe **LAPSUS$**, lors de laquelle le groupe a pris le contrôle des actualités, envoyé des e-mails de phishing à tous les abonnés d’Impresa, et rédigé un tweet sous le nom d’Expresso (un média dont Impresa est propriétaire) revendiquant le groupe LAPSUS$ comme le nouveau président du Portugal :     
 ![Tweeter Expresso](images/lapsus/twitter_expresso.png)  
 
 ### Localiza
@@ -115,10 +115,10 @@ Après l'attaque impactant Impressa, il n'a pas fallu attendre plus de 10 jours 
 ### Vodafone
 >ℹ️ Aucun lien n'est présent sur leur Telegram permettant de télécharger les données
 
-Le **8 février 2022**, le groupe refait parler de lui après l’attaque réussit contre **Vodafone**.
-Le 11 février, le groupe affirme sur leur Telegram qu’ils ont réussit à voler environ 500Gb de données. On saura, le 7 mars que ces données représentent environ 5000 repository Github.   
+Le **8 février 2022**, le groupe refait parler de lui après l’attaque réussie contre **Vodafone**.
+Le 11 février, le groupe affirme sur leur Telegram qu’ils ont réussi à voler environ 500Gb de données. On apprendra le 7 mars que ces données représentent environ 5000 repository Github.   
 ![Vodafone Telegram](images/lapsus/telegram_vodafone.png)  
-Cette fuite de donnée fait suite au sondage qu'ils ont fait sur leur Telegram ou ils demandaient quelles informations les personnes sur Telegram voulaient voir dans la nature. C'est l'entreprise Vodafone qui a malheureusement "remporté" le sondage:  
+Cette fuite de donnée fait suite au sondage qu'ils ont fait sur leur Telegram, où ils demandaient quelles informations leurs followers voulaient voir divulguées. C'est l'entreprise Vodafone qui a malheureusement "remporté" le sondage:  
 ![Sondage Telegram](images/lapsus/telegram_sondage.png)  
 
 ### NVIDIA
