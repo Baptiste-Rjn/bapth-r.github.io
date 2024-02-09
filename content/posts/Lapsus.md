@@ -124,10 +124,10 @@ Cette fuite de donnée fait suite au sondage qu'ils ont fait sur leur Telegram, 
 ### NVIDIA
 >⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de NVIDIA
 
-Le groupe a par la suite fait une "pause" de 17 jours avant de rendre publique leur attaque sur **NVIDIA** le 25 février 2022. Par rapport aux autres attaques, celle-ci a pris plus d'ampleur. En effet, le PDG de NVIDIA de l'époque, **Jensen Huang**, a été interviewé sur la chaîne Yahoo Finance afin de parler du piratage que subissait son entreprise :  
+Le groupe a par la suite fait une "pause" de 17 jours avant de rendre publique leur attaque sur **NVIDIA** le 25 février 2022. Par rapport aux autres attaques, celle-ci a pris plus d'ampleur. Le PDG de NVIDIA à l'époque, **Jensen Huang**, a été interviewé sur la chaîne Yahoo Finance afin de parler du piratage que subissait son entreprise :  
 [PDG NVIDIA vidéo](https://finance.yahoo.com/video/nvidia-ceo-says-lapsus-hack-134523585.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAMvftKOX8Nc4klL14WRJTEYnUg05xbz4drEwNYKqn0DqHxUac5DIXr3dPjudT1OcdSx6nX99btWMSbuIu4VCV4IQ4TU7IdbGvhnIlWNSOPUr-j8G1tX8KyNTA7UvGs2-LCoYU0Ogx5yEiFrhc1Le9ltn_erkcTPcbe2Tv0IsYt5I).
 
-Par rapport aux autres attaques, les pirates avaient de réelles revendications afin de ne pas révéler les informations qu'ils avaient réussi à voler. Au total, environ 1 To de données ont été exfiltrées. Cela contenait, selon LAPSUS$ :
+Par rapport aux autres attaques, les pirates avaient de réelles revendications afin de ne pas révéler les informations qu'ils avaient réussi à voler. Au total, environ 1 To de données ont été exfiltrées. Cela comprenait, selon LAPSUS$ :
 - Schéma de cartes
 - Drivers
 - Firmwares
@@ -176,7 +176,7 @@ Microsoft est le prochain à subir une fuite de données le 20 mars, mais la plu
 ### LG  
 >⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de LG
 
-Deux jours après, le 22 mars, LG subit une fuite de données. Sur la publication de revendication, le groupe LAPSUS$ se moque de la compagnie en disant qu'en seulement 1 an, le groupe a subit 2 cyberattaques. Les criminelles publient alors une liste de tous les hash des employés et services de LG.  
+Deux jours après, le 22 mars, LG subit une fuite de données. Sur la publication de revendication, le groupe LAPSUS$ se moque de la compagnie en disant qu'en seulement 1 an, le groupe a subit 2 cyberattaques. Les criminels publient alors une liste de tous les hash des employés et services de LG.  
 
 ![LG Telegram](images/lapsus/torrent_lg.png)
 
@@ -188,24 +188,24 @@ Deux jours après, le 22 mars, LG subit une fuite de données. Sur la publicatio
 Le 22 mars, le même jour que la divulgation des données de LG, le groupe publie un message revendiquant une attaque contre Okta. Ils partagent de nombreuses captures d'écran où on les voit comme administrateurs.  
 ![Okta 1 Telegram](images/lapsus/telegram_okta1.png)
 
-Cependant, le même jour, Okta publie un article expliquant qu'ils n'ont pas subi d'attaque : [Okta Statement](https://www.okta.com/blog/2022/03/updated-okta-statement-on-lapsus/). Ces informations ont été démenties et mal prisent par le groupe LAPSUS$.  
+Cependant, le même jour, Okta publie un article expliquant qu'ils n'ont pas subi d'attaque : [Okta Statement](https://www.okta.com/blog/2022/03/updated-okta-statement-on-lapsus/). Ces informations ont été démenties et mal prises par le groupe LAPSUS$.  
 ![Okta 2 Telegram](images/lapsus/telegram_okta2.png)  
 Un jour plus tard, Okta publie un nouveau communiqué dans lequel ils expliquent avoir été victimes d'une attaque, mais que l'impact est faible : [Okta's Investigation of the January 2022 Compromise](https://www.okta.com/blog/2022/03/oktas-investigation-of-the-january-2022-compromise/).  
 
 ### Globant
 >⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de Globant
 
-La dernière revendication d'attaque a été faite le **30 mars** sur l'entreprise Globant, où **70 Go** de données ont été volés et publiés, ainsi que des accès sur GitHub, Jira, Crucible et Confluence.  
+La dernière revendication d'attaque a été faite le **30 mars** sur l'entreprise Globant, où **70 Go** de données ont été volées et publiées, ainsi que des accès sur GitHub, Jira, Crucible et Confluence.  
 ![Okta 2 Telegram](images/lapsus/telegram_globant.png)
 
 
-Voici un récapitulatif des attaques mené par Lapsus$ provenant d’un rapport de Intrinsec :   
+Voici un récapitulatif des attaques menées par Lapsus$ provenant d’un rapport de Intrinsec :   
 ![Frise](images/lapsus/frise.png)
 
 ---
 
 ## Arrestations
-Le 21 mars, le FBI publie un article afin de solliciter des informations sur le groupe LAPSUS$ en vue de les arrêter, suite à la fuite de données que l'entrepirse Microsoft a subit.
+Le 21 mars, le FBI publie un article afin de solliciter des informations sur le groupe LAPSUS$ en vue de les arrêter, suite à la fuite de données que l'entrepirse Microsoft a subie.
 ![Fbi](images/lapsus/fbi.png)
 
 Deux jours après la publication du FBI, le 23 mars, le groupe annonce sur Telegram qu'il prend une semaine de vacances :  
