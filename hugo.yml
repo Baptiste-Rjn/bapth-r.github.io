@@ -1,5 +1,5 @@
 baseurl: https://bapth-r.github.io/
-languageCode: fr, en
+languageCode: fr
 theme: hugo-theme-stack
 paginate: 5
 title: Portfolio de Baptiste
