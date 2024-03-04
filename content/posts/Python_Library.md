@@ -19,7 +19,7 @@ image: "Pip/python-pip.png"
 ---
 
 # Introduction
-Depuis quelque temps, lors des développement Python que je fais, je perds du temps à vérifier si de nouvelles versions des librairies que j'utilise sont disponibles. Cela peut s'avérer fastidieux, surtout lorsque je dois consulter régulièrement mon fichier `requirements.txt` où sont répertoriées les bibliothèques utilisées par le projet. Dans cet article, je vais vous expliquer la création de mon projet permettant de rechercher et de mettre à jour le fichier requirements.txt avec les dernières versions des dépendances python et cela de manière automatique. Ce projet se base sur le site : https://pypi.org/, qui centralise toutes les bibliothèques Python.
+Depuis quelque temps, lors des développements Python que je fais, je perds du temps à vérifier si de nouvelles versions des librairies que j'utilise sont disponibles. Cela peut s'avérer fastidieux, surtout lorsque je dois consulter régulièrement mon fichier `requirements.txt` où sont répertoriées les bibliothèques utilisées par le projet. Dans cet article, je vais vous expliquer la création de mon projet permettant de rechercher et de mettre à jour le fichier requirements.txt avec les dernières versions des dépendances python et cela de manière automatique. Ce projet se base sur le site : https://pypi.org/, qui centralise toutes les bibliothèques Python.
 
 # Développement 
 
@@ -31,7 +31,7 @@ Dans un premier temps, nous cherchons à trouver la méthode la plus simple pour
 check-library
 ```
 
-Après nous être intéressés à l'interaction utilisateur, nous devons savoir comment aller chercher les dernières versions des bibliothèques utilisées. Pour cela, nous allons parcourir le fichier où sont stockées les bibliothèques utilisées (par défaut, le fichier requirements.txt). Dans un second temps, nous allons utiliser le flux RSS, un type de format Web facilement compréhensible par un bot, des librairies utilisées dans le projet afin de déterminer si ces bibliothèques possèdent des versions supérieures à celles utilisées dans le projet. À la fin de ce processus, cela créera un nouveau fichier nommé `requirement-output.txt` avec les nouvelles versions des dépendances. Voici un schéma explicatif de tout le processus :
+Après nous être intéressés à l'interaction utilisateur, nous devons savoir comment aller chercher les dernières versions des bibliothèques utilisées. Pour cela, nous allons parcourir le fichier où sont stockées les bibliothèques utilisées (par défaut, le fichier requirements.txt). Dans un second temps, nous allons utiliser le flux RSS, un type de format Web facilement compréhensible par un bot, des librairies utilisées dans le projet afin de déterminer si ces bibliothèques possèdent des versions supérieures à celles utilisées dans le projet. À la fin de ce processus, cela créera un nouveau fichier nommé `requirement-output.txt` avec les nouvelles versions des dépendances. Voici un schéma explicatif de tout le processus :    
 ![Schema PIP](/Pip/Schema_Lib.png#center)
 
 Nous avons également ajouté par défaut une partie "verbose" nous indiquant si la bibliothèque scannée est à jour ou non. Nous détaillerons dans la partie "Utilisation" toutes les possibilités de personnalisation de ce code afin que ce programme soit apprécié par le plus grand nombre.
@@ -123,7 +123,7 @@ Après la création du repo et le push du code, nous devons publier notre code a
 
 - build
 - check_library.egg-info
-- dist
+- dist     
 Une fois fait, nous devons utiliser la commande permettant de publier notre bibliothèque : `python3 -m twine upload dist/*`. Pour avoir la certitude que notre bibliothèque a bien été publiée, nous pouvons aller sur le site PyPI : https://pypi.org/project/check-library/
 ![PyPI](/Pip/pypl.png)
 
@@ -160,10 +160,10 @@ En effet, comme le fichier par défaut d'input est `requirements.txt`, nous n'av
 Nous allons maintenant nous intéresser aux différentes améliorations que nous pouvons implémenter sur ce programme afin de le rendre plus complet.
 
 ## Découverte de CVE
-Pour chaque librairies obsolète, nous pouvons vérifier si entre la version marquée dans le fichier contenant les dépendances utilisées par le projet et celles actuelles, des vulnérabilités ont été découvertes. Si oui, donner le score CVSS de chaque vulnérabilité.
+Pour chaque librairie obsolète, nous pouvons vérifier si entre la version marquée dans le fichier contenant les dépendances utilisées par le projet et celles actuelles, des vulnérabilités ont été découvertes. Si oui, donner le score CVSS de chaque vulnérabilité.
 
 ## Publication automatique 
-Pour chaque modification du code source publiée sur Github, un workflow pourrait être mise en place afin de publier automatiquement la nouvelle version sur le site PyPI après avoir effectué des tests unitaires au préalable.
+Pour chaque modification du code source publiée sur Github, un workflow pourrait être mis en place afin de publier automatiquement la nouvelle version sur le site PyPI après avoir effectué des tests unitaires au préalable.
 
 ## Découverte automatique des librairies utilisées
 Une dernière amélioration pourrait être de découvrir automatiquement les librairies utilisées par le projet, puis de générer/modifier le fichier répertoriant les bibliothèques utilisées.
