@@ -1,5 +1,5 @@
 ---
-title: "[Programming] - Creation and publication of a Python library (check-library)"
+title: "[Programming] - Creation and publication of a Python library"
 subtitle: ""
 date: 2024-03-03
 draft: false
