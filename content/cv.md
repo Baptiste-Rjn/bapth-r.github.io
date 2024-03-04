@@ -7,4 +7,4 @@ tags:
 ---
 
 
-![Alt Text](/images/cv/CV_RAJON.png)
+![Alt Text](/cv/CV_RAJON.png)

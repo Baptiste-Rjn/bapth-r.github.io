@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Algorithme on Portfolio de Baptiste</title>
+        <link>http://localhost:1313/tags/algorithme/</link>
+        <description>Recent content in Algorithme on Portfolio de Baptiste</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr</language>
+        <lastBuildDate>Sat, 20 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/algorithme/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[Algorithme] - Dijkstra</title>
+        <link>http://localhost:1313/posts/dijkstra/</link>
+        <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/dijkstra/</guid>
+        <description>&lt;img src="http://localhost:1313/dijkstra/dijkstra_wallpaper.png" alt="Featured image of post [Algorithme] - Dijkstra" /&gt;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Dans cet article, nous allons nous intéresser à un des algorithmes les plus connus de la théorie des graphes c&amp;rsquo;est à dire &lt;strong&gt;l&amp;rsquo;algorithme de Dijsktra&lt;/strong&gt;.&lt;br&gt;
+La théorie des graphe permet d&amp;rsquo;étudier les relations entre plusieurs objects. Ceux-ci sont représentés par des points, que l&amp;rsquo;on appelle des &amp;ldquo;nœuds&amp;rdquo; ou &amp;ldquo;sommet&amp;rdquo;, et les relations entre eux sont représentées par des lignes, que l&amp;rsquo;on appelle des &amp;ldquo;arêtes&amp;rdquo;.&lt;br&gt;
+&lt;strong&gt;L&amp;rsquo;algorithme de Dijkstra&lt;/strong&gt; aussi appelé &lt;strong&gt;l&amp;rsquo;algorithme du plus court chemin&lt;/strong&gt; consiste, à partir d&amp;rsquo;un réseau de nœuds et d&amp;rsquo;arêtes distinger les plus court chemin qui permet d&amp;rsquo;aller d&amp;rsquo;un point A à B le plus rapidement possible.&lt;/p&gt;
+&lt;p&gt;Nous verrons dans cet article, des cas d&amp;rsquo;utilisations dont un relatif à la cybersécurité. Puis nous nous intéresseront à son implémentation en Python.&lt;/p&gt;
+&lt;h1 id=&#34;cas-dutilisation&#34;&gt;Cas d&amp;rsquo;utilisation&lt;/h1&gt;
+&lt;p&gt;De nombreuses fois, je me suis demandé comment réussir à optimiser ce que j&amp;rsquo;étais entrain de faire afin de gagner du temps. Cependant, en fonction de la tâche en court, il est des fois impossible de réussir à l&amp;rsquo;optimiser correctement sans l&amp;rsquo;aide d&amp;rsquo;une machine capable d&amp;rsquo;effectuer un grand nombre d&amp;rsquo;opérations. Nous allons alors nous intéresser à plusieurs cas d&amp;rsquo;utilisation de l&amp;rsquo;algorithme de &lt;strong&gt;Dijkstra&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Choix du meilleur itinéraire&lt;/strong&gt;: En prenant cet exemple en compte, nous pouvons schématiser un plan routier avec cet algorithme. Les villes seront représenter par les nœuds et les routes par les arêtes. Cela nous permettra de savoir quel sera les plus court et le plus rapide grâce aux informations fournis par les arêtes. Nous pouvons même imaginer que ces informations se mettent automatiquement à jour en fonction de la circulation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Il faut aussi noter que cela peut très bien être appliqué pour tout problème nécessitant de trouver le plus court chemin comme de l&amp;rsquo;optimisation sur un ensemble de production par exemple.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Modélisation de connexion sur les réseaux sociaux&lt;/strong&gt;: Un autre utilisation serait sur la connexion des utilisateurs des réseaux sociaux. Nous pouvons très bien nous imaginer que les amis d&amp;rsquo;une personnes sont représenter par les nœuds et que leur niveau d&amp;rsquo;amitié soit caractérisé par les arêtes. En fonction de cela, il serait possible de trouver comment faire devenir 2 personnes amis en se basant sur les informations fournis par notre algorithme.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Détermination des chemins d&amp;rsquo;attaques les plus optimales pour l&amp;rsquo;attaquant&lt;/strong&gt;: Le dernier cas d&amp;rsquo;utilisation que nous allons observer est l&amp;rsquo;implémentation de l&amp;rsquo;algorithme de &lt;strong&gt;Dijkstra&lt;/strong&gt; afin de déterminer quel serait le chemin d&amp;rsquo;attaque le plus optimal qui nous permetterait de compromettre une machine depuis un endroit définit préalablement. Il est vrai que pour réussir à implémenter cela, il faut avoir une extrême bonne gestion de son parc informatique afin de connaitre toutes ses machines, les version et types d&amp;rsquo;OS (système d&amp;rsquo;exploitation), les services exposés, les vulnérabilités devant être exploités, &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;implémentation&#34;&gt;Implémentation&lt;/h1&gt;
+&lt;p&gt;Nous allons maintenant nous intéresser au fonctionnement de cet algorithme. Nous verrons alors dans un premier temps ce qu&amp;rsquo;est concrètement cet algorithme. Nous continurons par écrire l&amp;rsquo;algorithme. Puis nous finirons par l&amp;rsquo;implémenter en Python en y ajoutant quelques fonctionnalités utiles.&lt;/p&gt;
+&lt;h2 id=&#34;définition&#34;&gt;Définition&lt;/h2&gt;
+&lt;p&gt;Comme mentionné précédemment, l&amp;rsquo;algorithme de &lt;strong&gt;Dijkstra&lt;/strong&gt; utilise des concepts tels que les &amp;ldquo;nœuds&amp;rdquo; et les &amp;ldquo;arêtes&amp;rdquo;. Les nœuds représentent les points d&amp;rsquo;intersection, et ils ne contiennent qu&amp;rsquo;un identifiant unique sans autre information. Les arêtes sont les liens qui permettent de connecter deux nœuds. Pour évaluer la complexité du chemin à parcourir d&amp;rsquo;un point à un autre, on associe à chaque arête un poids indiquant le niveau de difficulté de la connexion.
+Prenons par exemple un trajet Paris vers Lyon.
+&lt;img src=&#34;http://localhost:1313/dijkstra/image_dijkstra.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;DIJKSTRA Illustration&#34;
+	
+	
+&gt;&lt;br&gt;
+Nous pouvons nous rendre compte que plusieurs chemins nous permettre de notre rendre à Lyon en partant de Paris. Cependant, la complexité (ici le temps), est différentes en fonction des chemins pris. En appliquant cet algorithme, nous pourrons alors savoir plus facilement quel chemin prendre.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Paris&lt;/th&gt;
+&lt;th&gt;Rennes&lt;/th&gt;
+&lt;th&gt;Poitier&lt;/th&gt;
+&lt;th&gt;Lyon&lt;/th&gt;
+&lt;th&gt;Montpellier&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ligne 1&lt;/td&gt;
+&lt;td&gt;Valeur A&lt;/td&gt;
+&lt;td&gt;Valeur X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ligne 2&lt;/td&gt;
+&lt;td&gt;Valeur B&lt;/td&gt;
+&lt;td&gt;Valeur Y&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ligne 3&lt;/td&gt;
+&lt;td&gt;Valeur C&lt;/td&gt;
+&lt;td&gt;Valeur Z&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ecriture&#34;&gt;Ecriture&lt;/h2&gt;
+&lt;h2 id=&#34;implémentation-1&#34;&gt;Implémentation&lt;/h2&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fr.wikipedia.org/wiki/Th&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fr.wikipedia.org/wiki/Th&lt;/a&gt;éorie_des_graphes&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

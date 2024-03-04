@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CTI on Portfolio de Baptiste</title>
+        <link>http://localhost:1313/tags/cti/</link>
+        <description>Recent content in CTI on Portfolio de Baptiste</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr</language>
+        <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/cti/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[CTI] - LAPSUS$</title>
+        <link>http://localhost:1313/posts/lapsus/</link>
+        <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/lapsus/</guid>
+        <description>&lt;img src="http://localhost:1313/LAPSUS.webp" alt="Featured image of post [CTI] - LAPSUS$" /&gt;&lt;h1 id=&#34;syllabus&#34;&gt;Syllabus&lt;/h1&gt;
+&lt;p&gt;Ce rapport a été fait dans le cadre de mon cursus à l&amp;rsquo;ENSIBS lors de ma 5ème année du cycle d&amp;rsquo;ingénieur.&lt;br&gt;
+&lt;strong&gt;Note&lt;/strong&gt;: 19/20&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;LAPSUS$&lt;/strong&gt;, également connu sous le nom de &lt;strong&gt;SaudeGroup&lt;/strong&gt;, est un groupe de cybercriminels apparu à la fin de l&amp;rsquo;année 2021. Ils communiquent principalement en anglais et en portugais lors de leurs échanges avec les entreprises. Ils se sont rapidement fait connaître en divulguant des données confidentielles de plusieurs entreprises connues telles que &lt;strong&gt;Microsoft&lt;/strong&gt;, &lt;strong&gt;NVIDIA&lt;/strong&gt;, ainsi que des entités gouvernementales comme le &lt;strong&gt;ministère de la santé du Brésil&lt;/strong&gt;. Contrairement aux groupes actuels de cybercriminels, LAPSUS$ ne déploie pas de ransomware après leurs attaques, à l&amp;rsquo;exception de celle dirigée contre le ministère de la santé du Brésil qui en a subit un.&lt;/p&gt;
+&lt;p&gt;Il est également à noter que LAPSUS$ n&amp;rsquo;est ni affilié ni sponsorisé par un État, comme ils le répètent souvent sur leur Telegram. Ils piratent et divulguent des données contre de l&amp;rsquo;argent ou des suppressions de limitations matérielles, comme nous le verrons dans le cas de NVIDIA.&lt;/p&gt;
+&lt;p&gt;Dans ce rapport, nous examinerons le groupe LAPSUS$ afin d&amp;rsquo;essayer de comprendre les motivations de ses membres en effectuant une recherche plus approfondie sur le créateur de ce groupe. Ensuite, nous nous intéresserons aux différentes attaques menées par ce groupe en nous renseignant préalablement sur les techniques, outils et méthodes utilisés par les hackers pour atteindre leurs objectifs. Nous conclurons ce document en nous penchant sur l&amp;rsquo;arrestation et la prétendue fin du groupe LAPSUS$.&lt;/p&gt;
+&lt;h1 id=&#34;création-du-groupe&#34;&gt;Création du groupe&lt;/h1&gt;
+&lt;p&gt;LAPSUS$ est un groupe de cybercriminels assez récent spécialisé dans le &lt;strong&gt;vol de données d&amp;rsquo;entreprise&lt;/strong&gt;. Il a été créé il y a environ 3 ans par un individu nommé &lt;strong&gt;Arion Kurtaj&lt;/strong&gt;, également connu sous les pseudonymes de &lt;strong&gt;Whitedoxbin&lt;/strong&gt;, &lt;strong&gt;Breachbase&lt;/strong&gt;, &lt;strong&gt;Oklaqq&lt;/strong&gt;, et &lt;strong&gt;White&lt;/strong&gt;. Pour des raisons de simplicité, nous l&amp;rsquo;appellerons dans la suite de ce document uniquement par l&amp;rsquo;un de ses pseudonymes : &lt;strong&gt;White&lt;/strong&gt;.&lt;br&gt;
+Nous allons voir dans la suite de cette partie le principal protagoniste du groupe.&lt;/p&gt;
+&lt;h2 id=&#34;arion-kurtaj-alias-white&#34;&gt;Arion Kurtaj alias White&lt;/h2&gt;
+&lt;p&gt;À l&amp;rsquo;âge de &lt;strong&gt;16 ans&lt;/strong&gt;, White se fait connaître sur Internet en vendant et achetant des &lt;strong&gt;0days&lt;/strong&gt;, c’est-à-dire des vulnérabilités impactant des services informatiques qui n&amp;rsquo;ont fait l&amp;rsquo;objet d&amp;rsquo;aucune publication ou qui n&amp;rsquo;ont aucun correctif public connu. Grâce à cette activité, il réussit à accumuler une somme estimée à environ &lt;strong&gt;14 millions&lt;/strong&gt; de dollars en bitcoin (BTC). Afin de garantir un minimum d&amp;rsquo;anonymat, tous ses échanges sont effectués avec un compte Telegram ou une adresse e-mail (&lt;code&gt;dox[***]te@pr[***]om&lt;/code&gt; et &lt;a class=&#34;link&#34; href=&#34;https://t.me/doxbinwhite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;https://t.me/doxbinwhite&lt;/code&gt;&lt;/a&gt;). Pour trouver ses acheteurs, il utilise de nombreux forums, notamment celui nommé : &lt;strong&gt;RAIDForums&lt;/strong&gt; qui a été fermé par le FBI depuis.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/raidforum.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;RaidForum Image&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;En plus de cela, &lt;strong&gt;White&lt;/strong&gt; est un membre fondateur du groupe nommé &lt;strong&gt;Infinity Recursion&lt;/strong&gt;, ayant comme domaine de prédilection le &lt;strong&gt;SIM-Swapping&lt;/strong&gt; et le &lt;strong&gt;Swatting&lt;/strong&gt;, 2 techniques que le groupe &lt;strong&gt;LAPSUS$&lt;/strong&gt; utilisera pour commenttre ses actes de piratages.&lt;/p&gt;
+&lt;p&gt;Explorons maintenant la définition de ces deux termes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le &lt;strong&gt;SIM-Swapping&lt;/strong&gt; permet de voler le numéro de téléphone de quelqu’un afin de pouvoir s’authentifier à ses comptes protégés par le 2FA (2 Factor Authentication) .&lt;/li&gt;
+&lt;li&gt;Le &lt;strong&gt;swatting&lt;/strong&gt; est une pratique de canular téléphonique visant à tromper les services de police de manière anonyme, en simulant une situation d&amp;rsquo;urgence, généralement chez un individu particulier, dans le but de lui causer des problèmes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sur ce site, il utilise un nouveau pseudo : &lt;strong&gt;Everlynn&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Pour continuer ses activités criminelles, &lt;strong&gt;White&lt;/strong&gt; est également un membre actif sur le site &lt;code&gt;doxbin[.]com&lt;/code&gt; dont il devient le propriétaire pour &lt;strong&gt;75 000$&lt;/strong&gt; en BTC, mais se retrouve contraint de revendre le site peu de temps après vers janvier 2022 pour &lt;strong&gt;20 000$&lt;/strong&gt;, car il n&amp;rsquo;est pas apprécié au sein de la communauté. Juste avant de le vendre, il divulgue l&amp;rsquo;intégralité du site pour se venger sur Telegram.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/doxbin_download.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Doxbin leak download&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Une analyse des articles sur &lt;a class=&#34;link&#34; href=&#34;https://flashpoint.io/blog/doxbin-leak/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://flashpoint.io/blog/doxbin-leak/&lt;/a&gt; et &lt;a class=&#34;link&#34; href=&#34;https://cyble.com/blog/sensitive-information-exposed-through-doxbin-data-leak/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cyble.com/blog/sensitive-information-exposed-through-doxbin-data-leak/&lt;/a&gt; a révélé que la fuite de données contient les informations de &lt;strong&gt;41 544 utilisateurs uniques&lt;/strong&gt; dans lesquelles sont présentes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;les noms d&amp;rsquo;utilisateur&lt;/li&gt;
+&lt;li&gt;les adresses e-mail&lt;/li&gt;
+&lt;li&gt;les mots de passe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Il faut aussi noter que dans la fuite de données, nous pouvons notamment trouver le mot de passe de White que nous ne divulguerons pas.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/doxbin_password.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Doxbin leak White password &#34;
+	
+	
+&gt;&lt;br&gt;
+Afin de se venger, les membres du forum l&amp;rsquo;ont par la suite doxxé, c&amp;rsquo;est-à-dire qu&amp;rsquo;ils ont révélé ses informations personnelles. Voici une capture d&amp;rsquo;écran montrant certaines données personnelles de White, bien entendu masquées.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/doxbin_white_leak.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Doxbin leak White&#34;
+	
+	
+&gt;&lt;br&gt;
+Dans ce leak, nous pouvons retrouver des photos de lui enfant, ainsi que des adresses e-mail, des mots de passe, des informations sur sa famille, et bien d&amp;rsquo;autres détails personnels.  Par ailleurs, voici une image de lui enfant que nous pouvons retrouver dans ces données :&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/doxbin_white2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Doxbin leak img White&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Même en étant découvert et possédant toutes ces informations personnelles sur Internet, White est resté comme nous allons le voir un membre actif du groupe &lt;strong&gt;LAPSUS$&lt;/strong&gt;. Interessons nous alors à ce groupe afin de connaitre ses revendications ainsi que ses différents piratages.&lt;/p&gt;
+&lt;h1 id=&#34;activités-du-groupe-lapsus&#34;&gt;Activités du groupe LAPSUS$&lt;/h1&gt;
+&lt;h2 id=&#34;découverte-du-groupe&#34;&gt;Découverte du groupe&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;LAPSUS$&lt;/strong&gt; est un groupe de cybercriminel composé de personnes jeunes dont des mineurs (-18 ans). Ils se sont fait connaitre en &lt;strong&gt;décembre 2021&lt;/strong&gt; et sont à l&amp;rsquo;origine de nombreuses fuites de données d&amp;rsquo;entreprises de renommé mondiales comme &lt;strong&gt;NVIDIA&lt;/strong&gt;, &lt;strong&gt;Microsoft&lt;/strong&gt; et même &lt;strong&gt;Ubisoft&lt;/strong&gt;. Nous allons voir dans le suite de ce document les méthodes utilisées par ce groupe, puis les différentes attaques qu&amp;rsquo;ils ont ménées.&lt;/p&gt;
+&lt;h2 id=&#34;méthodes-utilisées-par-ce-groupe&#34;&gt;Méthodes utilisées par ce groupe&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;LAPSUS$&lt;/strong&gt; utilise une large diversité de tactiques, techniques et procédures, cependant, ils préfèrent utiliser des failles humaines afin de réussir à arriver à leur objectif ce qui ne nécessite pas de techniques avancées en sécurité informatique. Nous pouvons en effet, retrouver un message sur leur Telegram essayant de recruter des personnes travaillant dans une des sociétés qu&amp;rsquo;ils avaient pour cible afin qu&amp;rsquo;ils leurs fournissent un accès initial :
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_hire.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Telegram hire&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Comme nous venons de le voir, le principal canal de communication est Telegram et une adresse mail:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;t[.]me/min&amp;hellip;r&lt;/strong&gt; (Ouvert) — Salon de revendication d’attaque&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t[.]me/s…t&lt;/strong&gt; (Supprimé) — Salon permettant de discuter avec la communauté et faire des sondages permettant de décider quel sera le prochain leak.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sa&amp;hellip;up@ct&amp;hellip;ar.com&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Après avoir découvert leurs moyens de communication, nous allons nous intéresser aux différentes attaques qu&amp;rsquo;ils ont menées.&lt;/p&gt;
+&lt;h2 id=&#34;attaques-menées&#34;&gt;Attaques menées&lt;/h2&gt;
+&lt;p&gt;Nous allons maintenant nous intéresser aux différentes attaques perpétrées par ce groupe dans un ordre chronologique. Nous allons nous appercevoir qu&amp;rsquo;en seulement 2 mois, de nombreuses entreprises ont subi des attaques et ont perdu des données précieuses.&lt;/p&gt;
+&lt;h3 id=&#34;ministère-de-la-santé-du-brésil&#34;&gt;Ministère de la santé du Brésil&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données du ministère&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Leur première attaque connue a été faite et revendiquée le &lt;strong&gt;10 décembre 2021&lt;/strong&gt;, prenant pour cible le ministère de la santé du Brésil. Bien que peu relayée médiatiquement, cette attaque a permis au groupe d&amp;rsquo;attaquants de dérober environ &lt;strong&gt;50 To de données&lt;/strong&gt;. Pour conclure sur cette attaque, le site du ministère a également été effacé, exposant ainsi le message suivant:&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/message_MOH_web.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MOH&#34;
+	
+	
+&gt;&lt;br&gt;
+Une communication a été faite par la suite sur leur Telegram annoncant cette compromission. Cela a été leur première communication :
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_moh.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MOH Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;claro-et-embratel&#34;&gt;Claro et Embratel&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Aucun lien n&amp;rsquo;est présent sur leur Telegram permettant de télécharger les données&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quatorze jours plus tard, le groupe revendique deux autres attaques, affirmant avoir réussi à pirater les entreprises &lt;strong&gt;Claro&lt;/strong&gt; et &lt;strong&gt;Embratel&lt;/strong&gt; le &lt;strong&gt;24 décembre 2021&lt;/strong&gt;. Dans ces cas également, le groupe demande une somme d&amp;rsquo;argent afin de ne pas divulguer des informations sur les sociétés, représentant une taille de &lt;strong&gt;10 000 To de documents confidentiels&lt;/strong&gt;.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_claro.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Claro Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;impresa&#34;&gt;Impresa&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Nous n&amp;rsquo;avons pas réussi à avoir un lien nous permettant de télécharger les données&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dans la suite de ces attaques, le 1er janvier 2022, l&amp;rsquo;entreprise &lt;strong&gt;Impresa&lt;/strong&gt; a subi une attaque du groupe &lt;strong&gt;LAPSUS$&lt;/strong&gt;, lors de laquelle le groupe a pris le contrôle des actualités, envoyé des e-mails de phishing à tous les abonnés d’Impresa, et rédigé un tweet sous le nom d’Expresso (un média dont Impresa est propriétaire) revendiquant le groupe LAPSUS$ comme le nouveau président du Portugal :  &lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/twitter_expresso.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Tweeter Expresso&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;localiza&#34;&gt;Localiza&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Aucun lien n&amp;rsquo;est présent sur leur Telegram permettant de télécharger les données&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Après l&amp;rsquo;attaque impactant Impressa, il n&amp;rsquo;a pas fallu attendre plus de 10 jours pour que le groupe revendique une autre attaque sur l&amp;rsquo;entreprise &lt;strong&gt;Localiza&lt;/strong&gt;. Afin de prouver l&amp;rsquo;attaque aux yeux de tout le monde et pour faire le plus de bruit possible, ils ont redirigé le site de l&amp;rsquo;entreprise de location de voitures vers un site pour adultes, en se vantant de leur exploit sur Telegram :&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_localiza.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Localiza Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vodafone&#34;&gt;Vodafone&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Aucun lien n&amp;rsquo;est présent sur leur Telegram permettant de télécharger les données&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le &lt;strong&gt;8 février 2022&lt;/strong&gt;, le groupe refait parler de lui après l’attaque réussie contre &lt;strong&gt;Vodafone&lt;/strong&gt;.
+Le 11 février, le groupe affirme sur leur Telegram qu’ils ont réussi à voler environ 500Gb de données. On apprendra le 7 mars que ces données représentent environ 5000 repository Github.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_vodafone.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Vodafone Telegram&#34;
+	
+	
+&gt;&lt;br&gt;
+Cette fuite de donnée fait suite au sondage qu&amp;rsquo;ils ont fait sur leur Telegram, où ils demandaient quelles informations leurs followers voulaient voir divulguées. C&amp;rsquo;est l&amp;rsquo;entreprise Vodafone qui a malheureusement &amp;ldquo;remporté&amp;rdquo; le sondage:&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_sondage.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Sondage Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nvidia&#34;&gt;NVIDIA&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de NVIDIA&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le groupe a par la suite fait une &amp;ldquo;pause&amp;rdquo; de 17 jours avant de rendre publique leur attaque sur &lt;strong&gt;NVIDIA&lt;/strong&gt; le 25 février 2022. Par rapport aux autres attaques, celle-ci a pris plus d&amp;rsquo;ampleur. Le PDG de NVIDIA à l&amp;rsquo;époque, &lt;strong&gt;Jensen Huang&lt;/strong&gt;, a été interviewé sur la chaîne Yahoo Finance afin de parler du piratage que subissait son entreprise :&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://finance.yahoo.com/video/nvidia-ceo-says-lapsus-hack-134523585.html?guccounter=1&amp;amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;amp;guce_referrer_sig=AQAAAMvftKOX8Nc4klL14WRJTEYnUg05xbz4drEwNYKqn0DqHxUac5DIXr3dPjudT1OcdSx6nX99btWMSbuIu4VCV4IQ4TU7IdbGvhnIlWNSOPUr-j8G1tX8KyNTA7UvGs2-LCoYU0Ogx5yEiFrhc1Le9ltn_erkcTPcbe2Tv0IsYt5I&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDG NVIDIA vidéo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Par rapport aux autres attaques, les pirates avaient de réelles revendications afin de ne pas révéler les informations qu&amp;rsquo;ils avaient réussi à voler. Au total, environ 1 To de données ont été exfiltrées. Cela comprenait, selon LAPSUS$ :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Schéma de cartes&lt;/li&gt;
+&lt;li&gt;Drivers&lt;/li&gt;
+&lt;li&gt;Firmwares&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Le 28 février, LAPSUS$ publie ce message sur son Telegram revendiquant l&amp;rsquo;attaque.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_nvidia1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NVIDIA 1 Telegram&#34;
+	
+	
+&gt;&lt;br&gt;
+Quelques heures après, le premier leak est partagé sur leur Telegram, et ils demandent par la même occasion de désactiver la limitation LHR (une protection contre le minage de cryptomonnaies) pour les cartes NVIDIA, ce qui réjouit certaines personnes sur Reddit.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/meme_nvidia.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Meme NVIDIA&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_nvidia_torrent.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NVIDIA leak&#34;
+	
+	
+&gt;&lt;br&gt;
+Dans les informations révélées, des certificats de signature de code de NVIDIA ont permis à des malwares d&amp;rsquo;être signés par NVIDIA, contournant ainsi les antivirus.&lt;/p&gt;
+&lt;p&gt;Deux jours après, le 1er mars, le groupe LAPSUS$ demande à NVIDIA que les drivers des GPU pour Windows, MacOS et Linux soient désormais open source pour toujours. Cependant, NVIDIA ne répondra pas. À cause de cela, une fuite de données de 71 000 comptes d&amp;rsquo;employés est révélée.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_nvidia2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NVIDIA 2 Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Quelques jours avant cette dernière revendication, NVIDIA a contre-attaqué le groupe en implantant un ransomware sur les machines de LAPSUS$. Le groupe a confirmé ces propos sur leur second canal Telegram :&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/hackback_nvidia.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NVIDIA Hackback&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;samsung&#34;&gt;Samsung&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de Samsung&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le 4 mars 2022, le groupe revendique une attaque contre Samsung, affirmant avoir volé de nombreuses informations et mettant à leur habitude un fichier torrent contenant au moins une partie des informations dérobées.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_samsung.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Samsung Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ubisoft&#34;&gt;Ubisoft&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ℹ️ Aucun lien n&amp;rsquo;est présent sur leur Telegram permettant de télécharger les données&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le 12 mars, le groupe revendique une attaque sur Ubisoft, mais aucune donnée n&amp;rsquo;est fournie. Les informations à ce sujet sont minimes.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_ubisoft.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Ubisoft Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;microsoft&#34;&gt;Microsoft&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de Microsoft&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Microsoft est le prochain à subir une fuite de données le 20 mars, mais la plupart des informations relatives au piratage ont été supprimées de leur Telegram. Cependant, nous avons réussi à récupérer plusieurs publications avant la suppression, dans lesquelles ils disaient avoir :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;90% du code source de Bing Maps&lt;/li&gt;
+&lt;li&gt;45% du code source de Cortana et Bing&lt;/li&gt;
+&lt;li&gt;Corrompu un Azure DevOps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/torrent_microsoft.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Microsoft Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;lg&#34;&gt;LG&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de LG&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Deux jours après, le 22 mars, LG subit une fuite de données. Sur la publication de revendication, le groupe LAPSUS$ se moque de la compagnie en disant qu&amp;rsquo;en seulement 1 an, le groupe a subit 2 cyberattaques. Les criminels publient alors une liste de tous les hash des employés et services de LG.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/torrent_lg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;LG Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/lapsus/leak_lg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;LG Leak&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;okta&#34;&gt;Okta&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de Okta&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Le 22 mars, le même jour que la divulgation des données de LG, le groupe publie un message revendiquant une attaque contre Okta. Ils partagent de nombreuses captures d&amp;rsquo;écran où on les voit comme administrateurs.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_okta1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Okta 1 Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Cependant, le même jour, Okta publie un article expliquant qu&amp;rsquo;ils n&amp;rsquo;ont pas subi d&amp;rsquo;attaque : &lt;a class=&#34;link&#34; href=&#34;https://www.okta.com/blog/2022/03/updated-okta-statement-on-lapsus/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Okta Statement&lt;/a&gt;. Ces informations ont été démenties et mal prises par le groupe LAPSUS$.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_okta2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Okta 2 Telegram&#34;
+	
+	
+&gt;&lt;br&gt;
+Un jour plus tard, Okta publie un nouveau communiqué dans lequel ils expliquent avoir été victimes d&amp;rsquo;une attaque, mais que l&amp;rsquo;impact est faible : &lt;a class=&#34;link&#34; href=&#34;https://www.okta.com/blog/2022/03/oktas-investigation-of-the-january-2022-compromise/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Okta&amp;rsquo;s Investigation of the January 2022 Compromise&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;globant&#34;&gt;Globant&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Un lien est présent sur leur Telegram permettant de télécharger des données de Globant&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;La dernière revendication d&amp;rsquo;attaque a été faite le &lt;strong&gt;30 mars&lt;/strong&gt; sur l&amp;rsquo;entreprise Globant, où &lt;strong&gt;70 Go&lt;/strong&gt; de données ont été volées et publiées, ainsi que des accès sur GitHub, Jira, Crucible et Confluence.&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_globant.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Okta 2 Telegram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Voici un récapitulatif des attaques menées par Lapsus$ provenant d’un rapport de Intrinsec :&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/frise.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Frise&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;arrestations&#34;&gt;Arrestations&lt;/h2&gt;
+&lt;p&gt;Le 21 mars, le FBI publie un article afin de solliciter des informations sur le groupe LAPSUS$ en vue de les arrêter, suite à la fuite de données que l&amp;rsquo;entrepirse Microsoft a subie.
+&lt;img src=&#34;http://localhost:1313/images/lapsus/fbi.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Fbi&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Deux jours après la publication du FBI, le 23 mars, le groupe annonce sur Telegram qu&amp;rsquo;il prend une semaine de vacances :&lt;br&gt;
+&lt;img src=&#34;http://localhost:1313/images/lapsus/telegram_vacation.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Telegram Vacation&#34;
+	
+	
+&gt;&lt;br&gt;
+Cependant, cette information coincide avec un article de la BBC paru le &lt;strong&gt;24 mars 2022&lt;/strong&gt; annonçant que 7 adolescents affiliés au groupe LAPSUS$ ayant entre 16 et 21 ans ont été arrêtés (dont White): &lt;a class=&#34;link&#34; href=&#34;https://www.bbc.com/news/technology-60864283&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.bbc.com/news/technology-60864283&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Cependant, une semaine après, le &lt;strong&gt;30 mars&lt;/strong&gt;, des messages ont été publié sur leur Telegram revendiquant l’attaque de Globant. Après cela, leur Telegram n’a plus été actif.&lt;/p&gt;
+&lt;p&gt;La dernière apparition de LAPSUS$ a été avec le leak de GTA 6, en &lt;strong&gt;septembre 2022&lt;/strong&gt;, cependant nous soupçonnons &lt;strong&gt;White&lt;/strong&gt; d’avoir agit tout seul et non avec le groupe. De plus leur Telegram n’a pas revendiqué ce leak.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;En conclusion, nous avons observé que le groupe &lt;strong&gt;LAPSUS$&lt;/strong&gt; a mené des attaques contre de nombreuses entreprises ainsi qu&amp;rsquo;une entité gouvernementale brésilienne. Leur approche repose souvent sur l&amp;rsquo;ingénierie sociale et le phishing, des méthodes qui ne nécessitent pas nécessairement des compétences techniques avancées. Les 0days sont rarement utilisés, privilégiant plutôt des méthodes visant à élever leurs privilèges après avoir obtenu un accès initial.&lt;/p&gt;
+&lt;p&gt;Nous avons également noté la rapidité d&amp;rsquo;action du groupe, ayant réussi en seulement 3 mois à compromettre et divulguer massivement des données d&amp;rsquo;entreprises telles que &lt;strong&gt;Microsoft&lt;/strong&gt;, &lt;strong&gt;Ubisoft&lt;/strong&gt; et &lt;strong&gt;NVIDIA&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Enfin, même après les arrestations et la dissolution du groupe, le fondateur de LAPSUS$, White, a réussi à faire fuiter une partie du code source de GTA 6. Cela remet en lumière le groupe, suscitant des inquiétudes quant à une éventuelle résurgence et la possibilité qu&amp;rsquo;il continue à semer la terreur pendant des mois.&lt;/p&gt;
+&lt;h2 id=&#34;sources&#34;&gt;Sources&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cisa.gov/sites/default/files/2023-08/CSRB_Lapsus%24_508c.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.cisa.gov/sites/default/files/2023-08/CSRB_Lapsus%24_508c.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.intrinsec.com/analysis-of-lapsus-intrusion-set/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.intrinsec.com/analysis-of-lapsus-intrusion-set/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://unit42.paloaltonetworks.com/lapsus-group/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://unit42.paloaltonetworks.com/lapsus-group/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.theverge.com/22998479/lapsus-hacking-group-cyberattacks-news-updates&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.theverge.com/22998479/lapsus-hacking-group-cyberattacks-news-updates&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.lemonde.fr/pixels/article/2023/12/22/lapsus-un-pirate-a-l-origine-du-hack-de-gta-vi-place-a-l-hopital-par-la-justice-britannique_6207274_4408996.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.lemonde.fr/pixels/article/2023/12/22/lapsus-un-pirate-a-l-origine-du-hack-de-gta-vi-place-a-l-hopital-par-la-justice-britannique_6207274_4408996.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://securityboulevard.com/2022/03/hackers-gaining-power-of-subpoena-via-fake-emergency-data-requests/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://securityboulevard.com/2022/03/hackers-gaining-power-of-subpoena-via-fake-emergency-data-requests/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.theverge.com/2022/3/23/22993731/lapsus-hacking-group-teenager-mastermind&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.theverge.com/2022/3/23/22993731/lapsus-hacking-group-teenager-mastermind&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://next.ink/1973/letonnant-profil-groupe-cybercriminel-lapsus/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;L’étonnant profil du groupe cybercriminel LAPSUS$ - Next&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.usine-digitale.fr/article/le-ministere-de-la-sante-bresilien-victime-d-une-cyberattaque-les-donnees-de-vaccination-ciblees.N1168357&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.usine-digitale.fr/article/le-ministere-de-la-sante-bresilien-victime-d-une-cyberattaque-les-donnees-de-vaccination-ciblees.N1168357&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://revistaoeste.com/politica/grupo-hacker-invade-outros-sites-do-governo-federal-e-xinga-bolsonaro/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://revistaoeste.com/politica/grupo-hacker-invade-outros-sites-do-governo-federal-e-xinga-bolsonaro/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.databreachtoday.asia/lapsus-attacks-localiza-redirects-users-to-porn-site-a-18286&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.databreachtoday.asia/lapsus-attacks-localiza-redirects-users-to-porn-site-a-18286&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.silentpush.com/blog/lapsus-group-an-emerging-dark-net-threat-actor/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.silentpush.com/blog/lapsus-group-an-emerging-dark-net-threat-actor/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.intrinsec.com/wp-content/uploads/2022/03/INTRINSEC-LAPSUS-Intrusion-Set-20220324.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.intrinsec.com/wp-content/uploads/2022/03/INTRINSEC-LAPSUS-Intrusion-Set-20220324.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=tyg7fCPneWk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/watch?v=tyg7fCPneWk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.wired.com/story/lapsus-hacking-group-extortion-nvidia-samsung/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.wired.com/story/lapsus-hacking-group-extortion-nvidia-samsung/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.databreaches.net/nvidia-breached-by-attackers-who-seem-shocked-by-hack-back/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.databreaches.net/nvidia-breached-by-attackers-who-seem-shocked-by-hack-back/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/vxunderground/status/1497484483494354946&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://twitter.com/vxunderground/status/1497484483494354946&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

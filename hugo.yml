@@ -1,5 +1,5 @@
-baseurl: https://baptiste-rjn.github.io/
-languageCode: fr
+baseurl: http://localhost
+languageCode: fr, en
 theme: hugo-theme-stack
 paginate: 5
 title: Portfolio de Baptiste
@@ -11,16 +11,16 @@ languages:
         weight: 1
 
     en:
-        languageName: English
-        title: Baptiste's Portfolio
+        languageName: "English"
+        contentDir: "content/en/posts"
+        languageDirection: "ltr"
+        languageCode: "en-US"
+        title: "Baptiste's Portfolio"
+        disabled: false
         weight: 2
 
     
        
-
-
-
-# GA Tracking ID
 googleAnalytics:
 
 # Theme i18n support
@@ -43,16 +43,16 @@ params:
     favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2020
+        since: 2024
         customText:
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: Jan 02, 2024
+        lastUpdated: Jan 02, 2024 15:04 MST
 
     sidebar:
         emoji: 👾
-        subtitle: Alternant en Cyberdéfense passioné par la sécurité informatique et le scripting
+        subtitle: Alternant en Cyberdéfense passionné par la sécurité informatique et le scripting.
         avatar:
             enabled: true
             local: true

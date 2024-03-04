@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Baptiste&#39;s Portfolio</title>
+        <link>http://localhost:1313/en/tags/</link>
+        <description>Recent content in Tags on Baptiste&#39;s Portfolio</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-US</language>
+        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Library</title>
+        <link>http://localhost:1313/en/tags/library/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/library/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Pip</title>
+        <link>http://localhost:1313/en/tags/pip/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/pip/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Programming</title>
+        <link>http://localhost:1313/en/tags/programming/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/programming/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

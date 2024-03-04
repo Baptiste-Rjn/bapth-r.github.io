@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Portfolio de Baptiste</title>
+        <link>http://localhost:1313/categories/</link>
+        <description>Recent content in Categories on Portfolio de Baptiste</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr</language>
+        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Programmation</title>
+        <link>http://localhost:1313/categories/programmation/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/programmation/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CTI</title>
+        <link>http://localhost:1313/categories/cti/</link>
+        <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/cti/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Découverte</title>
+        <link>http://localhost:1313/categories/d%C3%A9couverte/</link>
+        <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/d%C3%A9couverte/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linkedin</title>
+        <link>http://localhost:1313/categories/linkedin/</link>
+        <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/linkedin/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

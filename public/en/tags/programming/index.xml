@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Programming on Baptiste&#39;s Portfolio</title>
+        <link>http://localhost:1313/en/tags/programming/</link>
+        <description>Recent content in Programming on Baptiste&#39;s Portfolio</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-US</language>
+        <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/programming/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[Programming] - Creation and publication of a Python library (check-library)</title>
+        <link>http://localhost:1313/en/posts/python_library/</link>
+        <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/posts/python_library/</guid>
+        <description>&lt;img src="http://localhost:1313/Pip/python-pip.png" alt="Featured image of post [Programming] - Creation and publication of a Python library (check-library)" /&gt;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;For some time now, during the Python development work I undertake, I find myself spending time checking if new versions of the libraries I use are available. This can become tedious, especially when I have to regularly consult my &lt;code&gt;requirements.txt&lt;/code&gt; file, where the project&amp;rsquo;s libraries are listed. In this article, I will explain the creation of my project that enables searching and updating the &lt;code&gt;requirements.txt&lt;/code&gt; file with the latest versions of Python dependencies automatically. This project is based on the website: &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pypi.org/&lt;/a&gt;, which consolidates all Python libraries.&lt;/p&gt;
+&lt;h1 id=&#34;development&#34;&gt;Development&lt;/h1&gt;
+&lt;p&gt;In this section, we will focus on developing the code to retrieve the latest versions of libraries from the site: &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pypi.org/&lt;/a&gt;. Of course, the code will be written in Python 3 (version 3.12).&lt;/p&gt;
+&lt;p&gt;Initially, our goal is to find the simplest method for a person to check if their dependencies are up to date and upgrade those that are not. We have chosen to enable libraries to be updated with just one command. You will need to write the following command, adding optional arguments to instruct the code to perform certain actions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;check-library
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After addressing user interaction, our next step is to understand how to retrieve the latest versions of the used libraries. To achieve this, we will go through the file where the used libraries are stored (typically, the requirements.txt file). Subsequently, we will utilize the RSS feed, a web format easily understood by a bot, of the libraries used in the project to determine if these libraries have versions higher than those currently used. At the end of this process, a new file named &lt;code&gt;requirement-output.txt&lt;/code&gt; will be created with the updated versions of dependencies. Here is an explanatory diagram of the entire process:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Pip/Schema_Lib.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Schema PIP&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;We have also included a default &amp;ldquo;verbose&amp;rdquo; section indicating whether the scanned library is up to date or not. In the &amp;ldquo;Usage&amp;rdquo; section, we will provide detailed information on all customization possibilities for this code to make the program appreciated by a wide audience.&lt;/p&gt;
+&lt;p&gt;To conclude, here is an example of using the library:
+&lt;img src=&#34;http://localhost:1313/Pip/check-library_example.png#center&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Example check lib&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;publication&#34;&gt;Publication&lt;/h1&gt;
+&lt;p&gt;After ensuring that our program is correct, we need to publish it on the website: &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pypi.org/&lt;/a&gt;. We will now explain the process for doing so.&lt;/p&gt;
+&lt;h2 id=&#34;ajout-dun-fichier-setuppy&#34;&gt;Ajout d&amp;rsquo;un fichier setup.py&lt;/h2&gt;
+&lt;p&gt;Firstly, we need to create a file named &lt;code&gt;setup.py&lt;/code&gt; in which we will specify all the characteristics of our program. Here is the one I have used:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; setuptools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; setup
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setup(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;check_library&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    version&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1.0.4&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    author&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Bapth&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Check and update libraries in a requirements file &amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    long_description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;README.md&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    long_description_content_type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text/markdown&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    url&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://github.com/Bapth-R/check_library.git&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    py_modules&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;check_library&amp;#39;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    license &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Apache License, Version 2.0&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    install_requires&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;requests&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    classifiers&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Programming Language :: Python :: 3&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Operating System :: OS Independent&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    entry_points&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;console_scripts&amp;#39;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;check_library=check_library:main&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here, we specify the project&amp;rsquo;s name, version, author, documentation, license, and &amp;hellip; All of this information is public and can be retrieved by running the following command after installing the library:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; pip3 show check_library
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Output&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Name: check-library
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Version: 1.0.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Summary: Check and update libraries in a requirements file 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Home-page: https://github.com/Bapth-R/check_library.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Author: Bapth
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Author-email: None
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;License: Apache License, Version 2.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Location: /home/debian/.local/lib/python3.9/site-packages
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Requires: requests
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Required-by: 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-an-account-on-the-pypi-website&#34;&gt;Creating an account on the PyPI website&lt;/h2&gt;
+&lt;p&gt;To publish a new Python library, we need to register on the &lt;code&gt;PyPI&lt;/code&gt; website, which is quite easy. Afterward, we&amp;rsquo;ll need to create a token that allows us to authenticate when we want to make changes to the library. To do this, go to the URL: &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/manage/account/token/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pypi.org/manage/account/token/&lt;/a&gt; and generate a token. The format should be as follows: &lt;code&gt;pypi-{170}&lt;/code&gt;. Once generated, place this token in the &lt;code&gt;.pypirc&lt;/code&gt; file, which should be present at the project&amp;rsquo;s root. The format of this file should be as same as the example below (the only element to modify is the password):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;distutils&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;index-servers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pypi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;pypi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;repository: https://upload.pypi.org/legacy/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;username:__token__
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;password:pypi-*********
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once created, it is wise to create a &lt;code&gt;.gitignore&lt;/code&gt; file to specify certain files not to be published on Github, such as the file containing the token. Here is mine:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;venv/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.pypirc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.DS_Store/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;__pycache__
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dist/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;build/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;*.pyc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;*.pyo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;*.pyd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;*.egg-info/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After completing all these steps, we have created a GitHub repository to store our code, allowing everyone to see the actions performed by the script.&lt;/p&gt;
+&lt;p&gt;After the repository creation and our code push, we have to publish our code so that it can be downloaded using the command: &lt;code&gt;pip3 install check-library&lt;/code&gt;. To do this, execute the command: &lt;code&gt;python3 setup.py sdist bdist_wheel&lt;/code&gt;, which will create three folders:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;build&lt;/li&gt;
+&lt;li&gt;check_library.egg-info&lt;/li&gt;
+&lt;li&gt;dist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once done, we must use the command to publish our library: &lt;code&gt;python3 -m twine upload dist/*&lt;/code&gt;. To ensure that our library has been published successfully, we can visit the PyPI website: &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/project/check-library/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pypi.org/project/check-library/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Pip/pypl.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PyPI&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;how-to-use&#34;&gt;How to use&lt;/h1&gt;
+&lt;p&gt;In this &amp;ldquo;how to use&amp;rdquo; section, let&amp;rsquo;s explore how to use the library. The documentation is already available on my GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Bapth-R/check_library&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Bapth-R/check_library&lt;/a&gt;, however, I will summarize it here.&lt;/p&gt;
+&lt;p&gt;As we saw at the beginning of this article, this library aims to be as user-friendly as possible. Therefore, you can use it without needing to be an expert. Simply enter the command: &lt;code&gt;check_library&lt;/code&gt; in a terminal. This will take all the libraries listed in the &lt;code&gt;requirements.txt&lt;/code&gt; file, retrieve their latest versions, and create a file named &lt;code&gt;requirement-output.txt&lt;/code&gt;, which will be the updated requirements.txt file.&lt;/p&gt;
+&lt;p&gt;However, we can customize this library to meet various needs. It can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Change the name of the &lt;code&gt;requirements.txt&lt;/code&gt; file if the file used to store libraries has a different name, using the &lt;code&gt;-p&lt;/code&gt; or &lt;code&gt;--path&lt;/code&gt; option followed by the file name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change the destination file name. By default, it will be named &lt;code&gt;requirement-output.txt&lt;/code&gt;, but we can modify the default name using the &lt;code&gt;-o&lt;/code&gt; or &lt;code&gt;--output&lt;/code&gt; option followed by the file name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove the verbose option. This will no longer display the libraries in the terminal, only the message: &lt;code&gt;Requirements file updated&lt;/code&gt; when the program has finished. To do this, use the &lt;code&gt;-v&lt;/code&gt; or &lt;code&gt;--verbose&lt;/code&gt; option.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Overwrite the original file. To avoid having multiple requirements files, the &lt;code&gt;-f&lt;/code&gt; or &lt;code&gt;--force&lt;/code&gt; option allows overwriting the input file with the new library versions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;-h&lt;/code&gt; or &lt;code&gt;--help&lt;/code&gt; option provides information on script customizations and how to execute it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;case-of-study&#34;&gt;Case of study&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s now explore some usage examples to make it clearer.&lt;/p&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;In this example, we want to update our libraries from the &lt;code&gt;config/requirements.txt&lt;/code&gt; file. We want the output file to be named: &lt;code&gt;config/requirements-output.txt&lt;/code&gt;. To achieve this, we need to execute the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; check_library -p config/requirements.txt -o config/requirement-output.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example-2&#34;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;In this example, we want to update our libraries from the &lt;code&gt;requirements.txt&lt;/code&gt; file (default) and have the updated versions of the libraries placed back into this file. To achieve this, we need to use the following command:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; check_library -f
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Indeed, as the default input file is &lt;code&gt;requirements.txt&lt;/code&gt;, we didn&amp;rsquo;t need to specify the path to the original file. Additionally, we want to overwrite this file to update it. Therefore, we need to use the &lt;code&gt;-f&lt;/code&gt; option, which will force the overwrite of the file.&lt;/p&gt;
+&lt;h1 id=&#34;improvements&#34;&gt;Improvements&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s now focus on various improvements that we can implement in this program to make it more complete.&lt;/p&gt;
+&lt;h2 id=&#34;cve-discovery&#34;&gt;CVE discovery&lt;/h2&gt;
+&lt;p&gt;For each outdated library, we can check if vulnerabilities have been discovered between the version marked in the file containing the dependencies used by the project and the current versions. If yes, provide the CVSS score for each vulnerability.&lt;/p&gt;
+&lt;h2 id=&#34;automatic-publication&#34;&gt;Automatic Publication&lt;/h2&gt;
+&lt;p&gt;For each modification of the source code published on Github, a workflow could be set up to automatically publish the new version on the PyPI website after conducting preliminary unit tests.&lt;/p&gt;
+&lt;h2 id=&#34;automatic-discovery-of-used-libraries&#34;&gt;Automatic Discovery of Used Libraries&lt;/h2&gt;
+&lt;p&gt;A final improvement could involve automatically discovering the libraries used by the project and then generating/modifying the file listing the used libraries.&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;To sum up, this project has made it easier for me to manage Python library versions since the script handles it automatically. It also helped me to understand how Python libraries are published. If you find this project interesting, don&amp;rsquo;t hesitate to &amp;ldquo;star&amp;rdquo; it on Github :)&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

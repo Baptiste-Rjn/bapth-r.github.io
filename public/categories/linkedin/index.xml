@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Linkedin on Portfolio de Baptiste</title>
+        <link>http://localhost:1313/categories/linkedin/</link>
+        <description>Recent content in Linkedin on Portfolio de Baptiste</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr</language>
+        <lastBuildDate>Tue, 23 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/linkedin/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[Découverte] - Découverte et collecte d&#39;information sur Linkedin</title>
+        <link>http://localhost:1313/posts/linkedin/</link>
+        <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/linkedin/</guid>
+        <description>&lt;p&gt;test&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

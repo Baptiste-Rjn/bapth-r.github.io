@@ -46,7 +46,7 @@ Explorons maintenant la définition de ces deux termes :
 Sur ce site, il utilise un nouveau pseudo : **Everlynn**.
 
 
-Pour continuer ses activités criminelles, **White** est également un membre actif sur le site `doxbin[.]com` dont il devient le propriétaire pour **75 000$** en BTC, mais se retrouve contraint de revendre le site peu de temps après vers janvier 2022 pour **20 000$**, car il n'est pas apprécié au sein de la communauté. Juste avant de le rendre, il divulgue l'intégralité du site pour se venger sur Telegram.
+Pour continuer ses activités criminelles, **White** est également un membre actif sur le site `doxbin[.]com` dont il devient le propriétaire pour **75 000$** en BTC, mais se retrouve contraint de revendre le site peu de temps après vers janvier 2022 pour **20 000$**, car il n'est pas apprécié au sein de la communauté. Juste avant de le vendre, il divulgue l'intégralité du site pour se venger sur Telegram.
 
 ![Doxbin leak download](images/lapsus/doxbin_download.png)
 

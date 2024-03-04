@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Abouts on Portfolio de Baptiste</title>
+        <link>http://localhost:1313/about/</link>
+        <description>Recent content in Abouts on Portfolio de Baptiste</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>fr</language>
+        <lastBuildDate>Tue, 23 Jan 2024 18:40:46 +0100</lastBuildDate><atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>A propos</title>
+        <link>http://localhost:1313/about/about/</link>
+        <pubDate>Tue, 23 Jan 2024 18:40:46 +0100</pubDate>
+        
+        <guid>http://localhost:1313/about/about/</guid>
+        <description>&lt;img src="http://localhost:1313/about.jpg" alt="Featured image of post A propos" /&gt;&lt;h2 id=&#34;-who-am-i&#34;&gt;$ Who Am I&lt;/h2&gt;
+&lt;p&gt;Nom : Baptiste Rajon&lt;br&gt;
+Age : 22&lt;br&gt;
+Profession: Alternant en cyberdéfense&lt;br&gt;
+Ecole: ENSIBS (&lt;a class=&#34;link&#34; href=&#34;https://www-ensibs.univ-ubs.fr/fr/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www-ensibs.univ-ubs.fr/fr/index.html&lt;/a&gt;)&lt;br&gt;
+Région: Ile-de-France&lt;/p&gt;
+&lt;h2 id=&#34;centres-dintérets&#34;&gt;Centres d&amp;rsquo;intérets&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Informatique&lt;/li&gt;
+&lt;li&gt;Cybersécurité&lt;/li&gt;
+&lt;li&gt;OSINT&lt;/li&gt;
+&lt;li&gt;CTI&lt;/li&gt;
+&lt;li&gt;SPORT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;liens-importants&#34;&gt;Liens importants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Baptiste-Rajon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Baptiste-Rajon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/baptiste-rajon/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.linkedin.com/in/baptiste-rajon/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.root-me.org/Bapth&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.root-me.org/Bapth&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
