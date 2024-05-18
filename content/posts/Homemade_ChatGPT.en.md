@@ -12,8 +12,8 @@ categories: ["CTI"]
 image: "LAPSUS.webp"
 ---
 # Syllabus 
-Ce rapport a été fait dans le cadre de mon cursus à l'ENSIBS lors de ma 5ème année du cycle d'ingénieur.  
-**Note**: 19/20
+J'ai essayé de rendre ce document le plus accessible possible en évitant les termes trop techniques. Cependant, à certains moments, ce document entrera plus en détail dans l'hébergement d'une intelligence artificielle. À ce moment-là, j'essaierai de fournir des explications afin que tout le monde puisse comprendre cet article.
+
 
 ---
 

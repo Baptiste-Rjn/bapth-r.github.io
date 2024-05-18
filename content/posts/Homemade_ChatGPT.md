@@ -1,18 +1,18 @@
 ---
-title: "[Intelligence Artificielle] - Construction d'un ChatGPT hébergé en local "
+title: "[Artificial Intelligence] - Building a Locally Hosted ChatGPT"
 subtitle: ""
-date: 2024-05-18
+date: May 18, 2024
 draft: false
 author: "Baptiste"
-description: "Construction d'un ChatGPT hébergé en local"
+description: "Building a Locally Hosted ChatGPT"
 
 tags: ["Artificial Intelligence"]
-categories: ["IA"]
+categories: ["AI"]
 
 image: "IA.png"
 ---
 # Syllabus 
-J'ai essayé de rendre ce document le plus accessible possible en évitant les termes trop techniques. Cependant, à certains moments, ce document entrera plus en détail dans l'hébergement d'une intelligence artificielle. À ce moment-là, j'essaierai de fournir des explications afin que tout le monde puisse comprendre cet article.
+I tried to make this document as accessible as possible by avoiding overly technical terms. However, at certain points, this document will delve into the hosting of an artificial intelligence. At those times, I will do my best to provide explanations so that everyone can understand this article.
 
 ---
 
