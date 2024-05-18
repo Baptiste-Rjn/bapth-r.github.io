@@ -11,8 +11,8 @@ categories: ["AI"]
 
 image: "IA.png"
 ---
-# Syllabus 
-I tried to make this document as accessible as possible by avoiding overly technical terms. However, at certain points, this document will delve into the hosting of an artificial intelligence. At those times, I will do my best to provide explanations so that everyone can understand this article.
+# Syllabus
+J'ai essayé de rendre ce document le plus accessible possible en évitant les termes trop techniques. Cependant, à certains moments, ce document entrera plus en détail dans l'hébergement d'une intelligence artificielle. À ce moment-là, j'essaierai de fournir des explications afin que tout le monde puisse comprendre cet article.
 
 ---
 
@@ -20,7 +20,7 @@ I tried to make this document as accessible as possible by avoiding overly techn
 
 Depuis novembre 2022, l'IA a pris un nouvel essort avec la mise à disposition gratuite du modèle de langage ChatGPT par OpenAI. Cette démocratisation a conduit à une explosion du nombre de modèles disponibles, notamment grâce à des plateformes telles que Hugging Face. En seulement un an, le nombre de ces modèles est passé de 202 865 à 660 531, témoignant de l'engouement pour cette technologie.
 
-Dans ce contexte florissant, des entreprises comme Mistral se sont distinguées en développant des modèles rivalisant avec les géants du secteur tels que ChatGPT et Meta. Cette compétition a ouvert de nouvelles perspectives, comme en atteste le graphique comparatif ci-dessous.
+Dans cette augmentation croissante, des entreprises comme Mistral se sont distinguées en développant des modèles rivalisant avec les géants du secteur tels que ChatGPT et Meta. Cette compétition a ouvert de nouvelles perspectives, comme le montre le graphique comparatif ci-dessous.
 ![Mistral comparaison](images/ia/Mistral_comparaison.jpeg)
 
 Dans cet article, nous allons explorer la construction d'un modèle de conversation similaire à ChatGPT, mais hébergé localement. Pour ce faire, nous optons pour une approche pratique en utilisant un Raspberry Pi 4B avec 1 Go de RAM et un MacBook Pro M1 avec 16 Go de RAM pour l'hébergement des modèles. Cette démarche, inspirée par une vidéo de NetworkChuck intitulée "Host ALL your AI locally", s'inscrit dans une tendance croissante à privilégier l'hébergement local des modèles d'IA, offrant ainsi davantage de contrôle et de confidentialité aux utilisateurs. De plus, elle permet l'utilisation de modèles personnalisés, mieux adaptés à des besoins spécifiques et potentiellement plus performants que les modèles génériques disponibles en ligne.
@@ -28,13 +28,13 @@ Dans cet article, nous allons explorer la construction d'un modèle de conversat
 # Explication des models utilisés
 
 Dans notre projet de construction d'un ChatGPT local, nous faisons appel à différents Large Language Models (LLM). Ces modèles permettent la génération de texte cohérent et pertinent, similaire à celui de ChatGPT. Ils se distinguent par leur capacité à comprendre et produire du texte de manière intelligente, ce qui est déterminant pour des interactions naturelles avec les utilisateurs.  
-Les LLM se caractérisent par plusieurs aspects :  
+Les LLMs se caractérisent par plusieurs aspects :  
 
-- Taille : : Il s'agit du nombre de paramètres (tokens) que ces modèles peuvent comprendre. Cependant, il est important de noter que la qualité d'un modèle ne se limite pas à sa taille seule. La taille du modèle peut avoir un impact sur la performance du ChatGPT local, influençant à la fois la rapidité de réponse et la qualité des réponses générées.
+- Taille : Il s'agit du nombre de paramètres (tokens) que ces modèles peuvent comprendre. Cependant, il est important de noter que la qualité d'un modèle ne se limite pas à sa taille seule. La taille du modèle peut avoir un impact sur la performance du modèle, influençant à la fois la rapidité de réponse et la qualité des réponses générées.
 
-- Capacité de compréhension : Les LLM sont capables de faire des déductions basées sur le texte donné, ce qui leur permet de comprendre la signification du contenu au-delà des mots eux-mêmes. Cette capacité est essentielle pour générer des réponses pertinentes et adaptées à divers scénarios d'utilisation.
+- Capacité de compréhension : Les LLMs sont capables de faire des déductions basées sur le texte donné, ce qui leur permet de comprendre la signification du contenu au-delà des mots eux-mêmes. Cette capacité est essentielle pour générer des réponses pertinentes et adaptées à divers scénarios d'utilisation.
 
-- Technique d'apprentissage : Les LLM utilisent des techniques telles que le traitement en parallèle des mots et le fine-tuning pour améliorer leur compréhension du texte et leur performance dans des domaines spécifiques. Cette évolutivité leur permet de s'adapter aux besoins spécifiques de l'utilisateur ou du domaine d'application.
+- Technique d'apprentissage : Les LLMs utilisent des techniques telles que le traitement en parallèle des mots et le fine-tuning pour améliorer leur compréhension du texte et leur performance dans des domaines spécifiques. Cette évolutivité leur permet de s'adapter à des  besoins spécifiques.
 
 Dans le cadre de notre "projet", nous avons sélectionné plusieurs modèles pour leurs performances et leurs spécificités :
 
@@ -73,7 +73,7 @@ docker exec -it ollama ollama run mistral
 docker exec -it ollama ollama run dolphin-llama3:8b-256k
 ```
 
-Après avoir effectué toutes ces étapes, vous devriez normalement avoir accès à Ollama en local. Pour vous assurer que tout fonctionne correctement, vérifiez si vous obtenez une réponse lorsque vous accédez à l'URL : http://<votre-ip-locale>:11434. Si vous obtenez comme réponse `Ollama is running`, cela signifie que Ollama a bien démarré correctement.
+Après avoir effectué toutes ces étapes, nous devrions normalement avoir accès à Ollama en local. Pour nous en assurer, nous pouvons vérifier si nous obtenons une réponse lorsque nous accédons à l'URL : http://<votre-ip-locale>:11434. Si nous obtenons la réponse: `Ollama is running`, cela signifie que Ollama a bien démarré correctement.
 
 ## Installation de l'interface graphique
 
@@ -87,6 +87,7 @@ sudo docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE
 
 ### Étape 2 : Configuration du reverse proxy
 Une fois que nous avons connecté Ollama à une interface graphique, notre prochaine étape a été de permettre l'accès à cette interface web depuis n'importe quel appareil de notre réseau. Pour cela, nous avons utilisé Nginx en tant que reverse proxy. Nous avons commencé par installer Nginx en exécutant la commande suivante :
+`sudo apt install nginx`  
 
 Ensuite, nous avons modifié la configuration de Nginx comme expliqué ci-dessous :
 
@@ -109,12 +110,12 @@ Enfin, pour appliquer cette configuration, nous avons redémarré le service Ngi
 
 ## Configuration de OpenWebUI
 
-Une fois que le reverse proxy est configuré, nous pouvons à accéder à la plateforme OpenWebUI. Pour cela, il suffit de se rendre à l'URL suivante : http://<adresse-ip-du-raspberry>. À ce stade, vous serez invités à vous connecter. Le premier compte que vous créerez sera automatiquement attribué le rôle d'administrateur.
+Une fois que le reverse proxy est configuré, nous pouvons à accéder à la plateforme OpenWebUI. Pour cela, il suffit de se rendre à l'URL suivante : http://<adresse-ip-du-raspberry>. À ce stade, nous sommes invités à nous connecter. Le premier compte que nous créons sera automatiquement attribué le rôle d'administrateur.
 
-Une fois connecté, vous serez accueilli par l'interface d'OpenWebUI, comme illustré ci-dessous :
+Une fois connecté, nous sommes accueilli par l'interface d'OpenWebUI, comme illustré ci-dessous :
 ![WebUI first](images/ia/WebUI.png)
 
-Dès lors, vous pourrez accéder à différentes sections et configurer votre instance selon vos besoins spécifiques. Voici quelques fonctionnalités principales que vous pouvez explorer :
+Dès lors, nous pouvons accéder à différentes sections et configurer notre instance selon nos besoins spécifiques. Voici quelques fonctionnalités principales que nous ponvons explorer :
 
 - Section "Modelfiles" : Cette section nous permet de personnaliser les réponses générées par notre instance en fonction de nos préférences. Par exemple, nous pouvons spécifier des domaines spécifiques tels que "Programming" et "Education" pour améliorer la pertinence des réponses dans ces domaines. Cette personnalisation permet d'enrichir le contexte du modèle et d'obtenir des réponses plus précises et adaptées.
 
