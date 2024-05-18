@@ -12,11 +12,14 @@ categories: ["IA"]
 image: "IA.png"
 ---
 # Syllabus 
-J'ai essayé de rendre ce document le plus accessible possible en essayant de le rendre le moins technique possible. Cependant, à certains moment, ce document rentrera plus en détail dans l'hébergement d'une intelligence artificielle. A ce moment j'essayerai de fournir des explications afin que tout le monde puisse comprendre cet article.
+J'ai essayé de rendre ce document le plus accessible possible en évitant les termes trop techniques. Cependant, à certains moments, ce document entrera plus en détail dans l'hébergement d'une intelligence artificielle. À ce moment-là, j'essaierai de fournir des explications afin que tout le monde puisse comprendre cet article.
 ---
 
 # Introduction 
-Depuis le 30 novembre 2022, le model de langage d'OpenAI ChatGPT qui signifie (Chat Generative Pre-Trained Transformer) a été rendu accessible à tous gratuitement ce qui a marqué un tournant dans l'utilisation de l'IA dans le monde. Nous pouvons en effet nous rendre compte que le nombre de model sur le site Hugging Face (une entreprise francaise proposant en open-source des modèles d'IA) a augmenté de manière significative depuis 2023. Grâce au site [waybackmachine ](https://web.archive.org), nous pouvons voir que le 16 mai 2023 c'est à dire il y a 1 an, le nombre de model disponlible était de 202 865 maintenant le 18 mai 2024 660 531 models sont disponibles sur ce site. Nous pouvons trouver des models permettant d'analyser des images, des models permettant de générer du texte, des models permettant de générer des voix humaines, ... 
+
+Depuis le 30 novembre 2022, le modèle de langage d'OpenAI, ChatGPT (Chat Generative Pre-Trained Transformer), a été rendu accessible à tous gratuitement, ce qui a marqué un tournant dans l'utilisation de l'IA dans le monde. En effet, nous pouvons constater que le nombre de modèles sur le site Hugging Face (une entreprise française proposant des modèles d'IA en open source) a augmenté de manière significative depuis 2023. Grâce au site Wayback Machine, nous constatons que le 16 mai 2023, c'est-à-dire il y a un an, le nombre de modèles disponibles était de 202 865. Maintenant, le 18 mai 2024, 660 531 modèles sont disponibles sur ce site. Nous pouvons trouver des modèles permettant d'analyser des images, de générer du texte, de générer des voix humaines, etc.
+
+
 
 Avec cette évolution du nombre de models disponibles, des entreprises se sont spécialisé dans la création de models comme l'entreprise Mistral, une entreprise francaise qui développe des models rivalisant avec ceux de ChatGPT et de Meta. Voici un graphique mesurant la compréhention de des plus gros models. 
 ![Mistral comparaison](images/ia/Mistral_comparaison.jpeg)
@@ -38,7 +41,7 @@ Comme nous l'avons vu précédament, nous utiliserons plusieurs langage:
 ## Installation des models
 
 Apres avoir définis les modes utilisés, nous allons maintenant définir l'architecture de notre projet.
-![Architecture schema](images/ia/Schema_Archi.png)
+![Architecture schema](images/ia/Schema_Architecture.png)
 
 
 Après avoir définis les models utilisés, nous allons devoir installer Ollama, un framework permettant d'exécuter des LLM en local. J'ai voulu installer ollama dans un docker. Pour cela, j'utilise docker desktop car je suis sur Mac mais vous pouvez très facilement utiliser docker (Explication d'installation: https://docs.docker.com/engine/install/debian/). 
