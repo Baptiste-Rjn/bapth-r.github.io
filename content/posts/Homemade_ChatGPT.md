@@ -11,7 +11,6 @@ categories: ["IA"]
 
 image: "IA.png"
 ---
-
 # Syllabus 
 J'ai essayé de rendre ce document le plus accessible possible en essayant de le rendre le moins technique possible. Cependant, à certains moment, ce document rentrera plus en détail dans l'hébergement d'une intelligence artificielle. A ce moment j'essayerai de fournir des explications afin que tout le monde puisse comprendre cet article.
 ---
