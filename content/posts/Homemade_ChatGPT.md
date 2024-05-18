@@ -18,54 +18,55 @@ J'ai essayé de rendre ce document le plus accessible possible en évitant les t
 
 # Introduction 
 
-Depuis novembre 2022, l'IA a pris un nouvel essort avec la mise à disposition gratuite du modèle de langage ChatGPT par OpenAI. Cette démocratisation a conduit à une explosion du nombre de modèles disponibles, notamment grâce à des plateformes telles que Hugging Face. En seulement un an, le nombre de ces modèles est passé de 202 865 à 660 531, témoignant de l'engouement pour cette technologie.
+Since November 2022, AI has experienced a new surge with the free availability of the ChatGPT language model by OpenAI. This democratization has led to an explosion in the number of available models, notably through platforms such as Hugging Face. In just one year, the number of these models has increased from 202,865 to 660,531, reflecting the enthusiasm for this technology.
 
-Dans cette augmentation croissante, des entreprises comme Mistral se sont distinguées en développant des modèles rivalisant avec les géants du secteur tels que ChatGPT et Meta. Cette compétition a ouvert de nouvelles perspectives, comme le montre le graphique comparatif ci-dessous.
+Amidst this growing increase, companies like Mistral have distinguished themselves by developing models that compete with industry giants such as ChatGPT and Meta. This competition has opened up new perspectives, as demonstrated by the comparative graph below.
 ![Mistral comparaison](images/ia/Mistral_comparaison.jpeg)
 
-Dans cet article, nous allons explorer la construction d'un modèle de conversation similaire à ChatGPT, mais hébergé localement. Pour ce faire, nous optons pour une approche pratique en utilisant un Raspberry Pi 4B avec 1 Go de RAM et un MacBook Pro M1 avec 16 Go de RAM pour l'hébergement des modèles. Cette démarche, inspirée par une vidéo de NetworkChuck intitulée "Host ALL your AI locally", s'inscrit dans une tendance croissante à privilégier l'hébergement local des modèles d'IA, offrant ainsi davantage de contrôle et de confidentialité aux utilisateurs. De plus, elle permet l'utilisation de modèles personnalisés, mieux adaptés à des besoins spécifiques et potentiellement plus performants que les modèles génériques disponibles en ligne.
+In this article, we will explore building a conversation model similar to ChatGPT but hosted locally. To do this, we'll take a practical approach using a Raspberry Pi 4B with 1 GB of RAM and a MacBook Pro M1 with 16 GB of RAM for model hosting. This approach, inspired by a NetworkChuck video titled "Host ALL your AI locally," aligns with a growing trend towards prioritizing local hosting of AI models, providing users with more control and privacy. Additionally, it enables the use of custom models, better suited to specific needs and potentially outperforming generic models available online.
 
 # Explication des models utilisés
 
-Dans notre projet de construction d'un ChatGPT local, nous faisons appel à différents Large Language Models (LLM). Ces modèles permettent la génération de texte cohérent et pertinent, similaire à celui de ChatGPT. Ils se distinguent par leur capacité à comprendre et produire du texte de manière intelligente, ce qui est déterminant pour des interactions naturelles avec les utilisateurs.  
-Les LLMs se caractérisent par plusieurs aspects :  
+In our project to build a local ChatGPT, we rely on various Large Language Models (LLMs). These models facilitate the generation of coherent and relevant text, similar to that of ChatGPT. They are distinguished by their ability to understand and produce text intelligently, which is crucial for natural interactions with users.
 
-- Taille : Il s'agit du nombre de paramètres (tokens) que ces modèles peuvent comprendre. Cependant, il est important de noter que la qualité d'un modèle ne se limite pas à sa taille seule. La taille du modèle peut avoir un impact sur la performance du modèle, influençant à la fois la rapidité de réponse et la qualité des réponses générées.
+LLMs are characterized by several aspects:
 
-- Capacité de compréhension : Les LLMs sont capables de faire des déductions basées sur le texte donné, ce qui leur permet de comprendre la signification du contenu au-delà des mots eux-mêmes. Cette capacité est essentielle pour générer des réponses pertinentes et adaptées à divers scénarios d'utilisation.
+- Size: This refers to the number of parameters (tokens) that these models can comprehend. However, it's important to note that the quality of a model isn't solely determined by its size. The model's size can impact its performance, affecting both response speed and the quality of generated responses.
 
-- Technique d'apprentissage : Les LLMs utilisent des techniques telles que le traitement en parallèle des mots et le fine-tuning pour améliorer leur compréhension du texte et leur performance dans des domaines spécifiques. Cette évolutivité leur permet de s'adapter à des  besoins spécifiques.
+- Comprehension Ability: LLMs are capable of making deductions based on the given text, enabling them to understand the meaning of the content beyond just the words themselves. This capability is essential for generating relevant and contextually appropriate responses across various usage scenarios.
 
-Dans le cadre de notre "projet", nous avons sélectionné plusieurs modèles pour leurs performances et leurs spécificités :
+- Learning Technique: LLMs employ techniques such as parallel word processing and fine-tuning to enhance their understanding of text and performance in specific domains. This scalability enables them to adapt to specific needs.
 
-- Mistral 7B [Mistral Model](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2): Ce modèle de Mistral comprend 7 milliards de tokens. Le plus petit model de Mistral mais le seul pouvant être exécuté par mon Mac.
+In the context of our "project," we have selected several models for their performance and specific features:
 
-- Llama-3 8B [Lama Model](https://huggingface.co/meta-llama/Meta-Llama-3-8B): Dernier model de Meta, ce modèle rivalise avec ChatGPT-4. 
+- Mistral 7B [Mistral Model](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2): This Mistral model comprises 7 billion tokens. It's the smallest Mistral model but the only one that can be executed on my Mac.
 
-- Dolphin-2.9.1-llama-3-8b [Dolphin Llama](https://huggingface.co/cognitivecomputations/dolphin-2.9.1-llama-3-8b): Un autre modèle de Meta, moins restrictif que d'autres, offrant une grande flexibilité dans la génération de texte. Il peut être adapté et fine-tuné pour répondre aux besoins spécifiques de l'utilisateur, offrant ainsi une solution personnalisée pour des scénarios d'utilisation variés.
+- Llama-3 8B [Lama Model](https://huggingface.co/meta-llama/Meta-Llama-3-8B): The latest Meta model rivals ChatGPT-4.
+
+- Dolphin-2.9.1-llama-3-8b [Dolphin Llama](https://huggingface.co/cognitivecomputations/dolphin-2.9.1-llama-3-8b): Another Meta model, less restrictive than others, offering great flexibility in text generation. It can be adapted and fine-tuned to meet the specific needs of the user, thus providing a customized solution for various usage scenarios.
   
-Le modèle Dolphin se distingue par sa flexibilité et sa capacité à s'adapter à une large gamme de tâches. Contrairement à certains autres modèles qui peuvent avoir des restrictions sur les sujets ou les types de questions qu'ils peuvent traiter, le modèle Dolphin est conçu pour être plus ouvert, permettant aux utilisateurs de poser des questions sans contraintes. Cette caractéristique en fait un choix idéal permettant de converser avec notre ChatGPT sans avoir à nous soucier des restrictions. 
+The Dolphin model stands out for its flexibility and ability to adapt to a wide range of tasks. Unlike some other models that may have restrictions on topics or types of questions they can handle, the Dolphin model is designed to be more open, allowing users to ask questions without constraints. This feature makes it an ideal choice for conversing with our ChatGPT without having to worry about limitations.
 
 
 ## Installation des models
 
-Après avoir défini les modèles utilisés, nous allons maintenant définir l'architecture de notre projet.
+After defining the models used, we will now define the architecture of our project.
 ![Architecture schema](images/ia/Schema_Architecture.png)
 
 
-Après avoir défini les modèles utilisés, nous devons installer Ollama, un framework permettant d'exécuter des LLM en local. J'ai voulu installer Ollama dans un conteneur Docker. Pour cela, j'utilise Docker Desktop car je suis sur Mac, mais vous pouvez très facilement utiliser Docker. (Installation: https://docs.docker.com/engine/install/debian/). 
+After defining the models used, we need to install Ollama, a framework for running LLMs locally. I wanted to install Ollama in a Docker container. For this, I'm using Docker Desktop since I'm on a Mac, but you can easily use Docker as well. (Installation: https://docs.docker.com/engine/install/debian/).
 
-Après l'installation de Docker, nous devons installer l'image Docker. Pour cela, n'ayant pas de GPU Nvidia, j'ai lancé l'image grâce à la commande suivante :
+After installing Docker, we need to install the Docker image. Since I don't have an Nvidia GPU, I launched the image using the following command:  
 ```txt
 docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
-Cependant, si vous avez une carte Nvidia, vous pouvez utiliser cette commande afin d'utiliser votre GPU :
+However, if you have an Nvidia GPU, you can use this command to utilize your GPU:  
 
 ```txt
 docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
 
-Ensuite, nous devons exécuter les 3 modèles ci-dessus. Pour cela, nous devons utiliser les commandes suivantes :
+Next, we need to run the three models mentioned above. To do this, we need to use the following commands:
 
 ```txt
 docker exec -it ollama ollama run llama3
@@ -73,24 +74,23 @@ docker exec -it ollama ollama run mistral
 docker exec -it ollama ollama run dolphin-llama3:8b-256k
 ```
 
-Après avoir effectué toutes ces étapes, nous devrions normalement avoir accès à Ollama en local. Pour nous en assurer, nous pouvons vérifier si nous obtenons une réponse lorsque nous accédons à l'URL : http://<votre-ip-locale>:11434. Si nous obtenons la réponse: `Ollama is running`, cela signifie que Ollama a bien démarré correctement.
+After completing all these steps, we should normally have access to Ollama locally. To ensure this, we can check if we get a response when accessing the URL: `http://<your-local-ip>:11434`. If we receive the response: `Ollama is running`, it means that Ollama has started correctly.
 
 ## Installation de l'interface graphique
 
-Pour faciliter l'interaction avec Ollama, nous allons installer OpenWebUI, une interface graphique. OpenWebUI permettra de gérer et de contrôler les modèles de manière simple, directement depuis notre browser. Pour ce faire, nous allons suivre ces étapes:
+To facilitate interaction with Ollama, we will install OpenWebUI, a graphical interface. OpenWebUI will enable us to manage and control the models easily, directly from our browser. To do this, we will follow these steps:
 
 ### Étape 1 : Installation de OpenWebUI
-Nous avons commencé par installer OpenWebUI sur notre Raspberry Pi, qui doit bien sûr être connecté au même réseau que l'instance Ollama. Après avoir préalablement installé Docker sur le Raspberry, nous avons lancé l'image OpenWebUI en utilisant la commande suivante :
+We started by installing OpenWebUI on our Raspberry Pi, which must of course be connected to the same network as the Ollama instance. After installing Docker on the Raspberry beforehand, we launched the OpenWebUI image using the following command:
 ```txt
 sudo docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://<server-ip>:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
 ### Étape 2 : Configuration du reverse proxy
-Une fois que nous avons connecté Ollama à une interface graphique, notre prochaine étape a été de permettre l'accès à cette interface web depuis n'importe quel appareil de notre réseau. Pour cela, nous avons utilisé Nginx en tant que reverse proxy. Nous avons commencé par installer Nginx en exécutant la commande suivante :
+Once we connected Ollama to a graphical interface, our next step was to allow access to this web interface from any device on our network. For this, we used Nginx as a reverse proxy. We started by installing Nginx by running the following command:
 `sudo apt install nginx`  
 
-Ensuite, nous avons modifié la configuration de Nginx comme expliqué ci-dessous :
-
+Next, we modified the Nginx configuration as explained below:
 ```txt
 server {
     listen 80;
@@ -105,28 +105,27 @@ server {
     }
 }
 ```
-Enfin, pour appliquer cette configuration, nous avons redémarré le service Nginx en exécutant la commande suivante : `sudo systemctl restart nginx`
-
+Finally, to apply this configuration, we restarted the Nginx service by executing the following command: `sudo systemctl restart nginx`
 
 ## Configuration de OpenWebUI
 
-Une fois que le reverse proxy est configuré, nous pouvons à accéder à la plateforme OpenWebUI. Pour cela, il suffit de se rendre à l'URL suivante : http://<adresse-ip-du-raspberry>. À ce stade, nous sommes invités à nous connecter. Le premier compte que nous créons sera automatiquement attribué le rôle d'administrateur.
+Once the reverse proxy is configured, we can access the OpenWebUI platform. Simply go to the following URL: `http://<raspberry-ip-address>`. At this stage, we are prompted to log in. The first account we create will automatically be assigned the role of administrator.
 
-Une fois connecté, nous sommes accueilli par l'interface d'OpenWebUI, comme illustré ci-dessous :
+Once logged in, we are greeted by the OpenWebUI interface, as illustrated below:
 ![WebUI first](images/ia/WebUI.png)
 
-Dès lors, nous pouvons accéder à différentes sections et configurer notre instance selon nos besoins spécifiques. Voici quelques fonctionnalités principales que nous ponvons explorer :
+From there, we can access different sections and configure our instance according to our specific needs. Here are some main features we can explore:
 
-- Section "Modelfiles" : Cette section nous permet de personnaliser les réponses générées par notre instance en fonction de nos préférences. Par exemple, nous pouvons spécifier des domaines spécifiques tels que "Programming" et "Education" pour améliorer la pertinence des réponses dans ces domaines. Cette personnalisation permet d'enrichir le contexte du modèle et d'obtenir des réponses plus précises et adaptées.
+- "Modelfiles" Section: This section allows us to customize the responses generated by our instance according to our preferences. For example, we can specify specific domains such as "Programming" and "Education" to improve the relevance of responses in these domains. This customization enriches the model's context and helps obtain more accurate and tailored responses.
 
-Section "Documents" : Nous avons la possibilité de fournir des fichiers texte aux Large Language Models (LLMs) utilisés par notre instance. Ces documents serviront de source d'information supplémentaire pour les modèles, les aidant à mieux comprendre les sujets abordés et à améliorer la qualité de leurs réponses.
+"Documents" Section: We have the option to provide text files to the Large Language Models (LLMs) used by our instance. These documents will serve as additional sources of information for the models, helping them better understand the topics discussed and improve the quality of their responses.
 
-Attribution de tags aux prompts : Chaque prompt peut être associé à un ou plusieurs tags, ce qui facilite leur classification et leur recherche ultérieure. Cette fonctionnalité nous permet d'organiser efficacement nos prompts et de retrouver rapidement ceux qui nous intéressent.
+Assigning Tags to Prompts: Each prompt can be associated with one or more tags, facilitating their classification and later retrieval. This functionality allows us to efficiently organize our prompts and quickly find those of interest.
 
-De plus, la fonction de recherche intégrée simplifie considérablement la recherche des anciens prompts.
+Furthermore, the built-in search function significantly simplifies the process of searching for past prompts.
 
 ## Utilisation de différents models
-Dans cette dernière partie, nous plongeons dans les différences concrètes entre les différents modèles. Il devient évident dès les premières interactions que les modèles Llama et Mistral produisent des réponses presque indiscernables. Cependant, le modèle Dolphin se distingue de manière remarquable. Sa caractéristique la plus notable réside dans sa capacité à répondre à une gamme diversifiée de questions, sans aucune restriction apparente. Par exemple, j'ai récemment sollicité une explication détaillée accompagnée d'exemples sur le concept complexe des injections SQL, un sujet que ChatGPT aurait très probablement esquivé. Cette flexibilité offre une ouverture sans précédent pour explorer des sujets spécifiques et variés. Ainsi, l'implémentation de ces modèles en local, en complément de ChatGPT, se révèle être une solution particulièrement judicieuse pour des conversations détaillées et approfondies sur des sujets complexes.
+In this final section, we delve into the concrete differences between the various models. It becomes evident from the first interactions that the Llama and Mistral models produce responses that are almost indistinguishable. However, the Dolphin model stands out remarkably. Its most notable feature lies in its ability to respond to a diverse range of questions without any apparent restrictions. For example, I recently requested a detailed explanation accompanied by examples on the complex concept of SQL injections, a topic that ChatGPT would likely have avoided. This flexibility offers an unprecedented openness to explore specific and varied subjects. Thus, the implementation of these models locally, in addition to ChatGPT, proves to be a particularly astute solution for detailed and in-depth conversations on complex topics.
 
 ## Conclusion
-Malgré la légère différence de vitesse dans la génération des réponses par mes LLMs locaux par rapport à ChatGPT, conserver mes données en local demeure un avantage majeur, à mes yeux. De plus, la flexibilité offerte par la possibilité d'utiliser le modèle de notre choix est d'une importance capitale. En effet, grâce au modèle Dolphin, nous avons la liberté de poser une vaste gamme de questions sans aucune limitation, une caractéristique particulièrement bénéfique dans le domaine de la cybersécurité. Cette capacité d'adaptation constitue un atout considérable, renforçant ainsi l'efficacité de mes interactions avec les LLMs en local.
+Despite the slight difference in speed in generating responses from my local LLMs compared to ChatGPT, retaining my data locally remains a major advantage in my eyes. Furthermore, the flexibility offered by the ability to use the model of our choice is of paramount importance. Indeed, with the Dolphin model, we have the freedom to ask a wide range of questions without any limitations, a particularly beneficial feature in the field of cybersecurity. This adaptability is a considerable asset, thus enhancing the effectiveness of my interactions with local LLMs.
