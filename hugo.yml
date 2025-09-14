@@ -1,157 +1,75 @@
-baseurl: https://bapth-r.github.io/
-languageCode: fr
-theme: hugo-theme-stack
-paginate: 5
-title: Portfolio de Baptiste
+name: Deploy Hugo site to GitHub Pages
 
-languages:
-  fr:
-    languageName: Français
-    title: Portfolio de Baptiste
-    weight: 1
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 
-  en:
-    languageName: English
-    contentDir: content/en/posts
-    languageDirection: ltr
-    languageCode: en-US
-    title: Baptiste's Portfolio
-    disabled: false
-    weight: 2
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-googleAnalytics: 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
-# Theme i18n support
-DefaultContentLanguage: fr
-hasCJKLanguage: false
+defaults:
+  run:
+    shell: bash
 
-permalinks:
-  post: /p/:slug/
-  page: /:slug/
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.111.3
+    steps:
+      # 1. Checkout du repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
-params:
-  mainSections:
-    - posts
-  featuredImageField: image
-  rssFullContent: true
-  favicon: /favicon.ico  # place ton favicon dans `static/favicon.ico`
+      # 2. Installer Hugo CLI
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-  footer:
-    since: 2024
-    customText:
+      # 3. Installer Dart Sass (si nécessaire)
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
 
-  dateFormat:
-    published: Jan 02, 2024
-    lastUpdated: Jan 02, 2024 15:04 MST
+      # 4. Installer Node.js dependencies si présentes
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
-  sidebar:
-    emoji: 👾
-    subtitle: Alternant en Cyberdéfense passionné par la sécurité informatique et le scripting.
-    avatar:
-      enabled: true
-      local: true
-      src: img/avatar.png
+      # 5. Configurer GitHub Pages
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4   # <-- version mise à jour
 
-  article:
-    math: false
-    toc: true
-    readingTime: true
-    license:
-      enabled: true
-      default: Licensed under CC BY-NC-SA 4.0
+      # 6. Build Hugo
+      - name: Build Hugo site
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-  comments:
-    enabled: false
-    provider: disqus
+      # 7. Upload du site généré
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
 
-  widgets:
-    homepage:
-      - type: search
-      - type: archives
-        params:
-          limit: 5
-      - type: categories
-        params:
-          limit: 10
-      - type: tag-cloud
-        params:
-          limit: 10
-
-    page:
-      - type: toc
-
-  defaultImage:
-    opengraph:
-      enabled: true
-      local: true
-      src: img/default-og.png # place ton image OG dans `static/img/`
-
-  colorScheme:
-    toggle: true
-    default: auto
-
-  imageProcessing:
-    cover:
-      enabled: true
-    content:
-      enabled: true
-
-menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: -100
-      params:
-        icon: home
-    - identifier: about
-      name: About
-      url: /about/about
-      weight: -90
-      params:
-        icon: user
-    - identifier: posts
-      name: Posts
-      url: /posts/
-      weight: -80
-      params:
-        icon: post
-    - identifier: CV
-      name: CV
-      url: /cv/
-      weight: -70
-      params:
-        icon: cv
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: -60
-      params:
-        icon: search
-
-  social:
-    - identifier: github
-      name: GitHub
-      url: https://github.com/Bapth-R
-      params:
-        icon: brand-github
-    - identifier: linkedin
-      name: Linkedin
-      url: https://www.linkedin.com/in/baptiste-rajon/
-      params:
-        icon: linkedin
-    - identifier: rootme
-      name: Root-Me
-      url: https://www.root-me.org/Bapth
-      params:
-        icon: rootme
-
-related:
-  includeNewer: true
-  threshold: 60
-  toLower: false
-  indices:
-    - name: tags
-      weight: 100
-    - name: categories
-      weight: 200
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3   # <-- version mise à jour
