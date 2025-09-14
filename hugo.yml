@@ -5,181 +5,153 @@ paginate: 5
 title: Portfolio de Baptiste
 
 languages:
-    fr:
-        languageName: Français
-        title: Portfolio de Baptiste
-        weight: 1
+  fr:
+    languageName: Français
+    title: Portfolio de Baptiste
+    weight: 1
 
-    en:
-        languageName: "English"
-        contentDir: "content/en/posts"
-        languageDirection: "ltr"
-        languageCode: "en-US"
-        title: "Baptiste's Portfolio"
-        disabled: false
-        weight: 2
+  en:
+    languageName: English
+    contentDir: content/en/posts
+    languageDirection: ltr
+    languageCode: en-US
+    title: Baptiste's Portfolio
+    disabled: false
+    weight: 2
 
-    
-       
-googleAnalytics:
+googleAnalytics: 
 
 # Theme i18n support
-# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage: fr
-
-# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
-# This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
 
 permalinks:
-    post: /p/:slug/
-    page: /:slug/
+  post: /p/:slug/
+  page: /:slug/
 
 params:
-    mainSections:
-        - posts
-    featuredImageField: image
-    rssFullContent: true
-    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+  mainSections:
+    - posts
+  featuredImageField: image
+  rssFullContent: true
+  favicon: /favicon.ico  # place ton favicon dans `static/favicon.ico`
 
-    footer:
-        since: 2024
-        customText:
+  footer:
+    since: 2024
+    customText:
 
-    dateFormat:
-        published: Jan 02, 2024
-        lastUpdated: Jan 02, 2024 15:04 MST
+  dateFormat:
+    published: Jan 02, 2024
+    lastUpdated: Jan 02, 2024 15:04 MST
 
-    sidebar:
-        emoji: 👾
-        subtitle: Alternant en Cyberdéfense passionné par la sécurité informatique et le scripting.
-        avatar:
-            enabled: true
-            local: true
-            src: img/avatar.png
+  sidebar:
+    emoji: 👾
+    subtitle: Alternant en Cyberdéfense passionné par la sécurité informatique et le scripting.
+    avatar:
+      enabled: true
+      local: true
+      src: img/avatar.png
 
-    article:
-        math: false
-        toc: true
-        readingTime: true
-        license:
-            enabled: true
-            default: Licensed under CC BY-NC-SA 4.0
+  article:
+    math: false
+    toc: true
+    readingTime: true
+    license:
+      enabled: true
+      default: Licensed under CC BY-NC-SA 4.0
 
-    comments:
-        enabled: false
-        provider: disqus
+  comments:
+    enabled: false
+    provider: disqus
 
-    widgets:
-        homepage:
-            - type: search
-            - type: archivesq
-              params:
-                  limit: 5
-            - type: categories
-              params:
-                  limit: 10
-            - type: tag-cloud
-              params:
-                  limit: 10
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
 
-        page:
-            - type: toc
+    page:
+      - type: toc
 
+  defaultImage:
+    opengraph:
+      enabled: true
+      local: true
+      src: img/default-og.png # place ton image OG dans `static/img/`
 
+  colorScheme:
+    toggle: true
+    default: auto
 
-    defaultImage:
-        opengraph:
-            enabled: false
-            local: false
-            src:
+  imageProcessing:
+    cover:
+      enabled: true
+    content:
+      enabled: true
 
-    colorScheme:
-        # Display toggle
-        toggle: true
-
-        # Available values: auto, light, dark
-        default: auto
-
-    imageProcessing:
-        cover:
-            enabled: true
-        content:
-            enabled: true
-
-### Custom menu
-### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
-### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: 
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: -100
+      params:
+        icon: home
+    - identifier: about
+      name: About
+      url: /about/about
+      weight: -90
+      params:
+        icon: user
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: -80
+      params:
+        icon: post
+    - identifier: CV
+      name: CV
+      url: /cv/
+      weight: -70
+      params:
+        icon: cv
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: -60
+      params:
+        icon: search
 
-        - identifier: home
-          name: Home
-          url: /
-          weight: -100
-          params:
-            icon: home
-
-        - identifier: about
-          name: About
-          url: /about/about
-          weight: -90
-          params:
-            icon: user
-        
-       
-        
-        - identifier: posts
-          name: Posts
-          url: /posts/
-          weight: -80
-          params:
-            icon: post
-        
-        - identifier: CV
-          name: CV
-          url: /cv/
-          weight: -70
-          params:
-            icon: cv
-
-        - identifier: search
-          name: Search
-          url: /search/
-          weight: -60
-          params: 
-                icon: search
-            
-
-
-    social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/Bapth-R
-          params:
-              icon: brand-github
-
-        - identifier: linkedin
-          name: Linkedin
-          url: https://www.linkedin.com/in/baptiste-rajon/
-          params:
-              icon: linkedin
-        - identifier: rootme
-          name: Root-Me
-          url: https://www.root-me.org/Bapth
-          params:
-              icon: rootme
-
-        
+  social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/Bapth-R
+      params:
+        icon: brand-github
+    - identifier: linkedin
+      name: Linkedin
+      url: https://www.linkedin.com/in/baptiste-rajon/
+      params:
+        icon: linkedin
+    - identifier: rootme
+      name: Root-Me
+      url: https://www.root-me.org/Bapth
+      params:
+        icon: rootme
 
 related:
-    includeNewer: true
-    threshold: 60
-    toLower: false
-    indices:
-        - name: tags
-          weight: 100
-
-        - name: categories
-          weight: 200
-
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 200
