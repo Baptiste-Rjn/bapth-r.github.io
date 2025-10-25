@@ -50,12 +50,13 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4 # <-- Mis à jour
 
-      # 6. Build Hugo
+      # 6. Build Hugo site
       - name: Build Hugo site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          export PATH=$PATH:/snap/bin # <-- AJOUTE CETTE LIGNE
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       # 7. Upload du site
@@ -75,3 +76,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # <-- Mis à jour
+
