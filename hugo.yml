@@ -1,3 +1,4 @@
+# Ton workflow, mais avec les versions @v4 (ou les plus récentes)
 name: Deploy Hugo site to GitHub Pages
 
 on:
@@ -24,9 +25,9 @@ jobs:
     env:
       HUGO_VERSION: 0.111.3
     steps:
-      # 1. Checkout du repo
+      # 1. Checkout
       - name: Checkout repository
-        uses: actions/checkout@v4  # <-- Version v4
+        uses: actions/checkout@v4 # <-- Mis à jour
         with:
           submodules: recursive
 
@@ -36,36 +37,31 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
           sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-      # 3. Installer Dart Sass (si nécessaire)
+      # 3. Installer Dart Sass
       - name: Install Dart Sass
         run: sudo snap install dart-sass
 
-      # 4. Installer Node.js dependencies si présentes
-      # (Optionnel : ajouter un setup-node si tu as besoin d'une version spécifique)
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '20' # ou la version dont tu as besoin
-      #     cache: 'npm'
+      # 4. Installer Node.js dependencies
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
       # 5. Configurer GitHub Pages
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4 # <-- Tu avais déjà la v4, c'est parfait
+        uses: actions/configure-pages@v4 # <-- Mis à jour
 
-      # 6. Build Hugo
+      # 6. Build Hugo site
       - name: Build Hugo site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          export PATH=$PATH:/snap/bin # <-- AJOUTE CETTE LIGNE
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      # 7. Upload du site généré
+      # 7. Upload du site
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3 # <-- Version v3
+        uses: actions/upload-pages-artifact@v3 # <-- Mis à jour (v3 est la dernière ici)
         with:
           path: ./public
 
@@ -76,6 +72,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # 8. Déploiement
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # <-- Version v4
+        uses: actions/deploy-pages@v4 # <-- Mis à jour
+
