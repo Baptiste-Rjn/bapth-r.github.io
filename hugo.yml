@@ -26,7 +26,7 @@ jobs:
     steps:
       # 1. Checkout du repo
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # <-- Version v4
         with:
           submodules: recursive
 
@@ -41,13 +41,19 @@ jobs:
         run: sudo snap install dart-sass
 
       # 4. Installer Node.js dependencies si présentes
+      # (Optionnel : ajouter un setup-node si tu as besoin d'une version spécifique)
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20' # ou la version dont tu as besoin
+      #     cache: 'npm'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
       # 5. Configurer GitHub Pages
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4   # <-- version mise à jour
+        uses: actions/configure-pages@v4 # <-- Tu avais déjà la v4, c'est parfait
 
       # 6. Build Hugo
       - name: Build Hugo site
@@ -59,7 +65,7 @@ jobs:
 
       # 7. Upload du site généré
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3 # <-- Version v3
         with:
           path: ./public
 
@@ -72,4 +78,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3   # <-- version mise à jour
+        uses: actions/deploy-pages@v4 # <-- Version v4
